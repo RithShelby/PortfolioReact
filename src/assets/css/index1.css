@@ -1,0 +1,85 @@
+body{
+    overflow-x: hidden;
+}
+.navbar{
+    font-family: 'Anton', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    z-index: 9999;
+}
+.home_content{
+    font-family: 'Anton', sans-serif; 
+}
+.logo_nav{
+    width: 30px;
+}
+.text_outline{
+    -webkit-text-stroke: 3px black;
+    color: white;
+    text-shadow:
+        3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+       -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+.img-banner{
+    width: 600px !important;
+    z-index: -1;
+}
+.button_home{
+    top: 92%;
+}
+.img_about{
+    z-index: 1;
+}
+.box_content{
+    /* width: 350px; */
+    height: 220px;
+    background-color: lightgray;
+    z-index: -1;
+    top: 80%;
+    right: 25%;
+}
+.box_content1{
+    /* width: 350px; */
+    height: 220px;
+    background-color: lightgray;
+    z-index: -1;
+    top: 80%;
+   right: 10%;
+}
+.border_content{
+    top: 30% ;
+    left: -10%;
+    border: 3px solid black;
+    width: 200px;
+    height: 300px;
+    opacity: 50%;
+   
+}
+.about_content{
+    font-family: 'Anton', sans-serif;
+    color : black;
+    
+}
+.border_content_1{
+    top: 30% ;
+    left: 80%;
+    border: 3px solid black;
+    width: 200px;
+    height: 300px;
+    opacity: 50%;
+}
+/* Portfolio */
+.portfolio_route{
+    font-family: 'Anton', sans-serif;
+    background-image: radial-gradient( white,black);
+    color: white;
+   top: -20%;
+}
+.image_portfolio{
+    border-radius: 10%;
+    height: 100%;
+    width: 80%;
+}
