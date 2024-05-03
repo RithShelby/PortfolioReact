@@ -1,28 +1,35 @@
-import React from "react";
-import img_content from "../../assets/image/pro1.JPG";
-import img_team from "../../assets/image/team.jpg";
+import React, { useState } from "react";
+import AboutImg from "../../assets/image/aboutImg.png";
+import { IoLogoHtml5, IoLogoJavascript } from "react-icons/io";
+import { FaCss3Alt, FaReact } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiRedux } from "react-icons/si";
+import { BsBootstrapFill } from "react-icons/bs";
 const About = () => {
+  const [showItem1, setShowItem1] = useState(true);
+  const [showItem2, setShowItem2] = useState(false);
+
+  const showItemOne = () => {
+    setShowItem1(true);
+    setShowItem2(false);
+  };
+
+  const showItemTwo = () => {
+    setShowItem1(false);
+    setShowItem2(true);
+  };
   return (
-    <div className="col-lg-12 about_bg">
-      <div className="row mt-5">
-        <div className="col-lg-4 col-md-12 col-sm-12 mb-5 pb-5 ">
-          <div className="img_content position-relative px-5">
-            <div className="position-absolute border_content"></div>
-            <img
-              className="w-100 ms-5 rounded-2 img_about"
-              src={img_content}
-              alt=""
-            />
-            <div className="box_content position-absolute rounded-3 w-100"></div>
-          </div>
+    <div className="col-lg-12">
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-12 d-flex">
+          <img className="w-75 m-auto rounded-2" src={AboutImg} alt="" />
         </div>
-        <div className="col-lg-4 col-md-12 col-sm-12 mt-5 pt-3">
-          <p className="fw-bold fs-4 ms-4 mt-5">About Me</p>
-          <h1 className="display-1 about_content">I'm John Rith</h1>
+        <div className="col-lg-6 col-md-12 col-sm-12 mt-5   ">
+          <h1 className="display-1 about_content ">I'm John Rith</h1>
           <h1 className="display-1 about_content">Web</h1>
           <h1 className="display-1 about_content">React JS</h1>
           <h5 className="about_content">Based in Phnom Penh , Cambodia</h5>
-          <div className="row">
+          <div className="row text-secondary">
             <p className="fs-6">
               Once upon a time, there was a young boy who had a big dream of
               becoming a web developer. One day, he was sitting in a coffee shop
@@ -40,17 +47,60 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="col-lg-4 col-md-12 col-sm-12">
-          <div className="img_content position-relative px-5">
-            <div className="position-absolute border_content_1"></div>
-            <img
-              className="w-100 ms-5 rounded-2 img_about"
-              src={img_team}
-              alt=""
-            />
-            <div className="box_content1 position-absolute rounded-3  w-100"></div>
-          </div>
+      </div>
+      <div className="row">
+        <div className="d-flex flex-row align-items-center justify-content-start ">
+          <span
+            style={{ width: "80px", height: "1px" }}
+            className="border border-1 border-dark me-3"
+          ></span>
+          <h1 className=" fs-1 fw-bold">Skills</h1>
         </div>
+        <div className="row mx-5 text-center m-auto ">
+          <button
+            style={{ width: "120px" }}
+            className="btn btn-dark me-4 py-2"
+            onClick={showItemOne}
+          >
+            Skill Sets
+          </button>
+          <button
+            style={{ width: "120px" }}
+            className="btn btn-secondary"
+            onClick={showItemTwo}
+          >
+            Tools
+          </button>
+        </div>
+        {showItem1 && (
+          <div className="row text-center m-auto my-5">
+            <div className="col-lg-4 p-3 rounded-5 ">
+              <IoLogoHtml5 className="fs-1" />
+              <p className="">HTML</p>
+            </div>
+            <div className="col-lg-4 p-3 rounded-5">
+              <FaCss3Alt className="fs-1" />
+              <p className="">CSS</p>
+            </div>
+            <div className="col-lg-4 p-3 rounded-5">
+              <IoLogoJavascript className="fs-1" />
+              <p className="">JS</p>
+            </div>
+            <div className="col-lg-4 p-3 rounded-5">
+              <BsBootstrapFill className="fs-1" />
+              <p className="">BOOSTRAP</p>
+            </div>
+            <div className="col-lg-4 p-3 rounded-5">
+              <SiRedux className="fs-1" />
+              <p className="">REDUX</p>
+            </div>
+            <div className="col-lg-4 p-3 rounded-5">
+              <FaReact className="fs-1" />
+              <p className="">REACT JS</p>
+            </div>
+          </div>
+        )}
+        {showItem2 && <div>Item 2</div>}
       </div>
     </div>
   );

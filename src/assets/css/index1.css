@@ -1,123 +1,36 @@
 body{
     overflow-x: hidden;
-}
-.navbar{
-    font-family: 'Anton', sans-serif;
-    z-index: 9999;
-}
-
-.logo_nav{
-    width: 30px;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
 }
 .nav-item .nav-link{
-    color: #EEF5FF;
+    color: black;
 }
-/* .text_outline{
-    -webkit-text-stroke: 3px black;
-    color: white;
-    text-shadow:
-        3px 3px 0 #000,
-      -1px -1px 0 #000,  
-       1px -1px 0 #000,
-       -1px 1px 0 #000,
-        1px 1px 0 #000;
-} */
-.img-banner{
-    width: 600px !important;
-    
-}
-.button_home{
-    top: 92%;
-}
-.img_about{
-    z-index: 1;
-}
-.box_content{
-    /* width: 350px; */
-    height: 220px;
-    background-color: lightgray;
-    z-index: -1;
-    top: 80%;
-    right: 25%;
-}
-.box_content1{
-    /* width: 350px; */
-    height: 220px;
-    background-color: lightgray;
-    z-index: -1;
-    top: 80%;
-   right: 10%;
-}
-.border_content{
-    top: 30% ;
-    left: -10%;
-    border: 3px solid black;
-    width: 200px;
-    height: 300px;
-    opacity: 50%;
-   
+/* about card */
+.card-skill{
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0px 100px;
 }
 .about_content{
     font-family: 'Anton', sans-serif;
     color : black;
     
 }
-.border_content_1{
-    top: 30% ;
-    left: 80%;
-    border: 3px solid black;
-    width: 200px;
-    height: 300px;
-    opacity: 50%;
-}
-/* Portfolio */
-.bg_portfolio{
-    background-color: #EEF5FF;
-    font-family: 'Anton', sans-serif; 
-}
-
-.img_portfolio{
-    top: 100%;
-}
-
-/* banner animation*/
-p {
-    text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
-  }
-  .container-text {
-    font-size: 2.26rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
   .animation {
     height:50px;
     overflow:hidden;
-    margin-left: 1rem;
+
   }
-  
   .animation > div > div {
-    padding: 0px 10px;
     height:2.81rem;
-    margin-bottom: 2.4rem;
+    margin-bottom: 3rem;
     display:inline-block;
   }
   
   .animation div:first-child {
     animation: text-animation 8s infinite;
   }
-  
-  /* .first div {
-    background-color:#20a7d8;
-  }
-  .second div {
-    background-color:#CD921E;
-  }
-  .third div {
-    background-color:#c10528;
-  } */
-  
   @keyframes text-animation {
     0% {margin-top: 0;}
     10% {margin-top: 0;}
@@ -129,8 +42,4 @@ p {
     80% {margin-top: -5.62rem;}
     90% {margin-top: 0;}
     100% {margin-top: 0;}
-  }
-  .img_port1{
-    width: 21%;
-    margin: 10px 0px;
   }
