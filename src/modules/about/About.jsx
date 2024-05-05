@@ -1,25 +1,15 @@
 import React, { useState } from "react";
 import AboutImg from "../../assets/image/aboutImg.png";
-import { IoLogoHtml5, IoLogoJavascript } from "react-icons/io";
-import { FaCss3Alt, FaReact } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { SiRedux } from "react-icons/si";
-import { BsBootstrapFill } from "react-icons/bs";
+import { dataSkill } from "../helper/dataSkill";
+
 const About = () => {
-  const [showItem1, setShowItem1] = useState(true);
-  const [showItem2, setShowItem2] = useState(false);
-
-  const showItemOne = () => {
-    setShowItem1(true);
-    setShowItem2(false);
+  const [filterData, setFilterData] = useState("SkillSet");
+  const handleClick = (type) => {
+    setFilterData(type);
   };
-
-  const showItemTwo = () => {
-    setShowItem1(false);
-    setShowItem2(true);
-  };
+  const filterSkill = dataSkill.filter((e) => e.type === filterData);
   return (
-    <div className="col-lg-12">
+    <div className="col-lg-12 my-5">
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12 d-flex">
           <img className="w-75 m-auto rounded-2" src={AboutImg} alt="" />
@@ -56,51 +46,51 @@ const About = () => {
           ></span>
           <h1 className=" fs-1 fw-bold">Skills</h1>
         </div>
-        <div className="row mx-5 text-center m-auto ">
-          <button
-            style={{ width: "120px" }}
-            className="btn btn-dark me-4 py-2"
-            onClick={showItemOne}
-          >
-            Skill Sets
-          </button>
-          <button
-            style={{ width: "120px" }}
-            className="btn btn-secondary"
-            onClick={showItemTwo}
-          >
-            Tools
-          </button>
-        </div>
-        {showItem1 && (
-          <div className="row text-center m-auto my-5">
-            <div className="col-lg-4 p-3 rounded-5 ">
-              <IoLogoHtml5 className="fs-1" />
-              <p className="">HTML</p>
-            </div>
-            <div className="col-lg-4 p-3 rounded-5">
-              <FaCss3Alt className="fs-1" />
-              <p className="">CSS</p>
-            </div>
-            <div className="col-lg-4 p-3 rounded-5">
-              <IoLogoJavascript className="fs-1" />
-              <p className="">JS</p>
-            </div>
-            <div className="col-lg-4 p-3 rounded-5">
-              <BsBootstrapFill className="fs-1" />
-              <p className="">BOOSTRAP</p>
-            </div>
-            <div className="col-lg-4 p-3 rounded-5">
-              <SiRedux className="fs-1" />
-              <p className="">REDUX</p>
-            </div>
-            <div className="col-lg-4 p-3 rounded-5">
-              <FaReact className="fs-1" />
-              <p className="">REACT JS</p>
-            </div>
+        {/* Skill and Tool */}
+        <div className="">
+          <div className="d-flex flex-row justify-content-start align-items-cente ms-5">
+            <button
+              className={`btn me-3 ${
+                filterData === "SkillSet" ? "btn-dark" : "btn-light"
+              }`}
+              onClick={() => handleClick("SkillSet")}
+            >
+              Skill Set
+            </button>
+            <button
+              className={`btn me-3 ${
+                filterData === "Tools" ? "btn-dark" : "btn-light"
+              }`}
+              onClick={() => handleClick("Tools")}
+            >
+              Tools
+            </button>
           </div>
-        )}
-        {showItem2 && <div>Item 2</div>}
+          <div className="row">
+            {filterSkill.map((item) => {
+              return (
+                <div className="col-md-4 card_hover d-flex justify-content-center my-3">
+                  {" "}
+                  <div
+                    key={item.id}
+                    className="card border border-0 rounded-4"
+                    style={{
+                      width: "18rem",
+                      boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+                    }}
+                  >
+                    <img
+                      className="card-img-top w-25 m-auto mt-3"
+                      src={item.img}
+                      alt=""
+                    />
+                    <p className="card-body m-auto fw-bold">{item.name}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

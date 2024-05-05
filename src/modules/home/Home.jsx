@@ -1,25 +1,31 @@
 import React from "react";
-import Profile from "../../assets/image/profileHome.png";
+
 import HomeImg from "../../assets/image/HomeImage.png";
-import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <div className="row my-5">
       <div className="col-lg-6 mt-5">
-        <main class=" d-flex flex-column text-center justify-content-center align-items-center">
-          <h1 className="fw-bold ms-4">Hi,There! Who am I ?✌️</h1>
-          <section class="animation fw-bold fs-2 ms-3">
-            <div class="first">
-              <div className="">Experience on React Js</div>
+        <div class=" row">
+          <div class="text-dark">
+            <h1 className="display-4 text-dark text-center fw-bold">
+              Who am I ?
+            </h1>
+            <div class="roller text-center">
+              <span class="fs-4 fw-bold text-secondary" id="rolltext">
+                Experienced on React Js
+                <br />
+                Redux Managment State
+                <br />
+                Need Hiring !
+                <br />
+                <span class="text-dark" id="spare-time">
+                  That's All
+                </span>
+              </span>
+              <br />
             </div>
-            <div class="second">
-              <div>Redux !</div>
-            </div>
-            <div class="third">
-              <div>Need Hiring!</div>
-            </div>
-          </section>
-        </main>
+          </div>
+        </div>
         <div className="text-start mt-5 ms-4">
           <h2 className="text-uppercase text-center text-decoration-underline  mb-4">
             let me introduce myself
