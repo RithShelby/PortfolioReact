@@ -14,18 +14,19 @@ const Project = () => {
           Here are few projects, you can demo and take a source code.
         </p>
       </div>
-      <div className="row mx-3">
+      <div className="row">
         {" "}
         {dataProject.map((item) => {
           return (
-            <div className="col-md-6 my-2">
+            <div className="col-md-4 my-2">
               <div
-                className="card p-3 border border-2 border-dark rounded-0 card_bg overflow-hidden "
+                style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
+                className="card p-3 w-100 border border-0 rounded-5 card_bg overflow-hidden "
                 key={item.id}
               >
                 <img
                   style={{ height: "200px" }}
-                  className="img-fluid card-img-top w-100 m-auto card_img"
+                  className="img-fluid card-img-top rounded-5 w-100 m-auto card_img"
                   src={item.img}
                   alt=""
                 />
@@ -34,11 +35,14 @@ const Project = () => {
                   <hr />
                   <div className="d-flex justify-content-start align-items-center m-auto text-center">
                     <p className="mt-3">{item.date}</p>
-                    <Link to={item.demo} className="btn btn-light mx-4 d-flex">
+                    <Link
+                      to={item.demo}
+                      className="btn btn-light mx-3 w-50 p-2"
+                    >
                       <CgWebsite className="fs-5 m-auto me-2" />
                       Demo
                     </Link>
-                    <Link to={item.github} className="btn btn-dark">
+                    <Link to={item.github} className="btn btn-dark w-50 p-2 ">
                       <FaGithub className="fs-5 m-auto me-2" />
                       Git hub
                     </Link>

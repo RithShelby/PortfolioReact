@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AboutImg from "../../assets/image/aboutImg.png";
 import { dataSkill } from "../helper/dataSkill";
+import RecCourse from "../course/RecCourse";
 
 const About = () => {
   const [filterData, setFilterData] = useState("SkillSet");
@@ -21,19 +22,20 @@ const About = () => {
           <h5 className="about_content">Based in Phnom Penh , Cambodia</h5>
           <div className="row text-secondary">
             <p className="fs-6">
-              Once upon a time, there was a young boy who had a big dream of
-              becoming a web developer. One day, he was sitting in a coffee shop
-              when he met a man who worked as a mobile developer.The boy was
-              curious about what the man was doing on his laptop, so he asked,
-              "What's that?" The man replied, "I'm Coding."
+              Once upon a time, there was a young boy with a big dream to be
+              <span className="mx-2 fw-bold">Web</span>
+              developer . One day, while sitting in a coffee shop, he met a man
+              who was working on his laptop. Curious, the boy asked, "What are
+              you doing?" The man replied, "I'm coding." Curious about the man's
+              work, the boy asked, "What do you do?" The man smiled and asked,
+              "What do you want to be?" The boy said, "I want to build websites.
             </p>
-            <p>
-              Then he asked the boy, "What do you want to be?" The boy replied,
-              "I want to be a web developer." The man smiled and said, "In that
-              case, you should start learning HTML, CSS, and JavaScript."
-              Feeling excited, the boy went home and started learning what the
-              man had suggested. And now, he is me, the boy who dreamed of
-              becoming a web developer.
+            <p className="fs-6">
+              " The man grinned and said, "Then you should start by learning
+              HTML, CSS, and JavaScript." Excited, the boy went home and began
+              learning exactly what the man had suggested. And now, he is me,
+              the boy who dreamed to be
+              <span className="mx-2 fw-bold">Web</span> developer.
             </p>
           </div>
         </div>
@@ -48,7 +50,7 @@ const About = () => {
         </div>
         {/* Skill and Tool */}
         <div className="">
-          <div className="d-flex flex-row justify-content-start align-items-cente ms-5">
+          <div className="d-flex flex-row justify-content-start align-items-center ms-5">
             <button
               className={`btn me-3 ${
                 filterData === "SkillSet" ? "btn-dark" : "btn-light"
@@ -75,12 +77,12 @@ const About = () => {
                     key={item.id}
                     className="card border border-0 rounded-4"
                     style={{
-                      width: "18rem",
+                      width: "25rem",
                       boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
                     }}
                   >
                     <img
-                      className="card-img-top w-25 m-auto mt-3"
+                      className="card-img-top w-25 m-auto mt-3 px-2"
                       src={item.img}
                       alt=""
                     />
@@ -92,6 +94,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <RecCourse />
     </div>
   );
 };
