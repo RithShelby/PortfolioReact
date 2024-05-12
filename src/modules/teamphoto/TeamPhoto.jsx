@@ -1,55 +1,136 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
-import imagekiloit1 from "../../../assets/image/kiloit2.jpg";
-import imagekiloit2 from "../../../assets/image/team.jpg";
-import imagekiloit4 from "../../../assets/image/teamKiloIT.jpg";
-import imagekiloit5 from "../../../assets/image/kiloit5.jpg";
-const dataTeam = [
-  {
-    id: 1,
-    image: imagekiloit2,
-    desc: "descrition1",
-  },
-  {
-    id: 2,
-    image: imagekiloit5,
-    desc: "descrition1",
-  },
-  {
-    id: 3,
-    image: imagekiloit4,
-    desc: "descrition1",
-  },
-];
+import {
+  Avatar,
+  Box,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Flex,
+  Heading,
+  IconButton,
+  Image,
+  Text,
+  useToast,
+} from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Stack } from "react-bootstrap";
+import { BiChat, BiLike, BiShare } from "react-icons/bi";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { FaRegComment } from "react-icons/fa6";
+import { PiShareFat } from "react-icons/pi";
+import mainPro from "../../assets/image/TeamSide1.jpg";
+import Profile from "../../assets/image/RithSteav-TK.jpg";
+import { dataTeam } from "../helper/dataSkill";
 const TeamPhoto = () => {
+  const [isLike, setLike] = useState(false);
+  const handleLike = () => {
+    setLike(!isLike);
+  };
+  const toast = useToast();
   return (
-    <div className="col-lg-12">
-      <div className="row mt-5">
-        <div className="col-lg-6 text-center">
-          <img className="w-75 rounded-4" src={imagekiloit1} alt="" />
-          <p>Kilo IT's member celebrated Christmas together</p>
-          <p className="opacity-50">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
-            veniam unde nulla minus nisi ducimus soluta laudantium blanditiis
-            animi voluptate......
-          </p>
-        </div>
-        <div className="col-lg-6">
-          {dataTeam.map((item) => {
-            return (
-              <div className="row ">
-                <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-center">
-                  <img
-                    className="img_port1  rounded-4"
-                    src={item.image}
-                    alt=""
-                  />
-                  <p className="px-4">{item.desc}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+    <div className="row my-5 justify-content-center d-flex m-auto">
+      <div className="col-lg-5 col-md-12 m-auto">
+        <Card maxW="lg" className="m-auto rounded-4">
+          <CardHeader>
+            <Flex spacing="4">
+              <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
+                <img
+                  style={{ width: "60px" }}
+                  src={Profile}
+                  className="border border-0 rounded-5 p-2"
+                  alt="Avatar"
+                />
+
+                <Box>
+                  <Heading size="sm">John_Rith</Heading>
+                  <Text>Front end, Lover</Text>
+                </Box>
+              </Flex>
+              <IconButton
+                variant="ghost"
+                colorScheme="gray"
+                aria-label="See menu"
+                icon={<BsThreeDotsVertical />}
+              />
+            </Flex>
+          </CardHeader>
+          <CardBody>
+            <Text>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias,
+              deserunt culpa. Nobis dolor consectetur et accusantium?
+              Consequuntur inventore impedit aliquam soluta expedita, est, dolor
+              laudantium tempora atque repudiandae vero molestias.
+            </Text>
+          </CardBody>
+          <Image objectFit="cover" src={mainPro} alt="Chakra UI" />
+          <div className="d-flex justify-content-evenly align-items-center my-3">
+            <div
+              onClick={handleLike}
+              className={`${
+                isLike
+                  ? "icon-hover d-flex fs-6 m-auto text-primary rounded-5"
+                  : "icon-hover d-flex fs-6 m-auto text-dark rounded-5"
+              }`}
+            >
+              <BiLike className="m-auto me-2 fs-5" />
+              <button>Like</button>
+            </div>
+            <div className="d-flex icon-hover fs-6 m-auto">
+              {" "}
+              <FaRegComment className="m-auto me-2 fs-5" />
+              <button>Comment</button>
+            </div>
+            <div
+              className="d-flex icon-hover fs-6 m-auto"
+              onClick={() =>
+                toast({
+                  title: "Thank you for sharing !",
+                  description: "appreciate it 😍",
+                  status: "success",
+                  duration: 9000,
+                  isClosable: true,
+                })
+              }
+            >
+              <PiShareFat className="m-auto me-2 fs-5" />
+              <button>Share</button>
+            </div>
+          </div>
+        </Card>
+      </div>
+      <div className="col-lg-5 col-md-9 ">
+        {dataTeam.map((items) => {
+          return (
+            <Card
+              style={{ width: "100%" }}
+              className="col-sm-12 my-3 rounded-4 "
+              direction={{ base: "column", sm: "row" }}
+              overflow="hidden"
+              variant="outline"
+            >
+              <Image
+                objectFit="cover"
+                maxW={{ base: "100%", sm: "200px" }}
+                src={items.image}
+              />
+
+              <Stack>
+                <CardBody>
+                  <Heading size="md">{items.title}</Heading>
+
+                  <Text py="2">{items.desc}</Text>
+                </CardBody>
+
+                <CardFooter>
+                  <Button variant="solid" colorScheme="blue">
+                    {items.detail}
+                  </Button>
+                </CardFooter>
+              </Stack>
+            </Card>
+          );
+        })}
       </div>
     </div>
   );

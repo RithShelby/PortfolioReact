@@ -3,7 +3,7 @@ import React from "react";
 import HomeImg from "../../assets/image/HomeImage.png";
 const HomePage = () => {
   return (
-    <div className="row my-5">
+    <div className="row my-2">
       <div className="col-lg-6 mt-5">
         <div class=" row">
           <div class="text-dark">

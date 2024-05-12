@@ -14,11 +14,11 @@ const Narbar = () => {
     };
   }, [top]);
   return (
-    <div>
+    <div className="mb-5">
       {" "}
       <nav
         style={{ height: "80px" }}
-        className={`navbar navbar-expand-md px-4 fixed-top d-none d-lg-flex border border-1  ${
+        className={`navbar navbar-expand-md px-4 fixed-top d-none d-lg-flex border border-1 ${
           !top ? "navbar-blur" : ""
         }`}
       >
@@ -59,12 +59,12 @@ const Narbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about_me">
+              <Link className="nav-link" to="/team-photo">
                 Team Photo
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about_me">
+              <Link className="nav-link" to="/contact-me">
                 Contact Me
               </Link>
             </li>

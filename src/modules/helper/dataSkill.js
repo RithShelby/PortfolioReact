@@ -133,7 +133,29 @@ const dataCourse = [
       "https://www.youtube.com/embed/j942wKiXFu8?si=Ma-KvVvtjIVdZlaQ&amp",
   },
 ];
-
+const dataTeam = [
+  {
+    id: 1,
+    image: require("../../assets/image/TeamSide1.jpg"),
+    title: "hello from cambodia",
+    desc: "hello guys",
+    detail: "more",
+  },
+  {
+    id: 1,
+    image: require("../../assets/image/TeamSlide2.jpg"),
+    title: "hello from cambodia",
+    desc: "hello guys",
+    detail: "more",
+  },
+  {
+    id: 1,
+    image: require("../../assets/image/teamKiloIT.jpg"),
+    title: "hello from cambodia",
+    desc: "hello guys",
+    detail: "more",
+  },
+];
 // Now the titles are updated and more descriptive for user interaction
 
-export { dataSkill, dataProject, dataCourse };
+export { dataSkill, dataProject, dataCourse, dataTeam };

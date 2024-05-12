@@ -10,7 +10,7 @@ const About = () => {
   };
   const filterSkill = dataSkill.filter((e) => e.type === filterData);
   return (
-    <div className="col-lg-12 my-5">
+    <div className="col-lg-12 my-3">
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12 d-flex">
           <img className="w-75 m-auto rounded-2" src={AboutImg} alt="" />
