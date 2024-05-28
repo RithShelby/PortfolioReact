@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AboutImg from "../../assets/image/aboutImg.png";
+import AboutImg from "../../assets/image/About1.png";
 import { dataSkill } from "../helper/dataSkill";
 import RecCourse from "../course/RecCourse";
 

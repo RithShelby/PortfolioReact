@@ -6,8 +6,8 @@ import { CgWebsite } from "react-icons/cg";
 import { FaGithub } from "react-icons/fa";
 const Project = () => {
   return (
-    <div className="col-lg-12 mt-5 text-center">
-      <div className="row mt-5">
+    <div className="col-lg-12 text-center">
+      <div className="row">
         {" "}
         <h1 className="fw-bold">My Recent Projects</h1>
         <p className="text-secondary">
@@ -33,16 +33,13 @@ const Project = () => {
                 <div className="card-body text-start text-secondary">
                   <p className="fs-6 fw-bold ">{item.desc}</p>
                   <hr />
-                  <div className="d-flex justify-content-start align-items-center m-auto text-center">
+                  <div className="d-flex justify-content-between align-items-center m-auto text-center">
                     <p className="mt-3">{item.date}</p>
-                    <Link
-                      to={item.demo}
-                      className="btn btn-light mx-3 w-50 p-2"
-                    >
+                    <Link to={item.demo} className="btn btn-light d-flex">
                       <CgWebsite className="fs-5 m-auto me-2" />
                       Demo
                     </Link>
-                    <Link to={item.github} className="btn btn-dark w-50 p-2 ">
+                    <Link to={item.github} className="btn btn-dark d-flex ">
                       <FaGithub className="fs-5 m-auto me-2" />
                       Git hub
                     </Link>

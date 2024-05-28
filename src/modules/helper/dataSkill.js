@@ -136,26 +136,47 @@ const dataCourse = [
 const dataTeam = [
   {
     id: 1,
-    image: require("../../assets/image/TeamSide1.jpg"),
-    title: "hello from cambodia",
-    desc: "hello guys",
+    image: require("../../assets/image/teamkilo1.JPG"),
+    title: "KiloIT Team Collaborating",
+    desc: "Members of the KiloIT team hard at work, collaborating on software projects in a modern office environment. Their dedication and teamwork are evident as they focus on their laptops.",
     detail: "more",
   },
   {
-    id: 1,
+    id: 2,
     image: require("../../assets/image/TeamSlide2.jpg"),
-    title: "hello from cambodia",
-    desc: "hello guys",
+    title: "KiloIT Office Motto",
+    desc: "The KiloIT office proudly displays its motto: 'Work Less, Worry Less, Succeed More, Enjoy More.' This inspiring message reflects the company's philosophy and commitment to a balanced work-life approach.",
     detail: "more",
   },
   {
-    id: 1,
-    image: require("../../assets/image/teamKiloIT.jpg"),
-    title: "hello from cambodia",
-    desc: "hello guys",
+    id: 3,
+    image: require("../../assets/image/teamkilo3.jpg"),
+    title: "KiloIT Team Meeting",
+    desc: "A KiloIT team meeting in progress, where members discuss and share ideas. The image captures the collaborative spirit and active engagement of the team in a structured yet open environment.",
     detail: "more",
   },
 ];
+const dataPost = [
+  {
+    id: 1,
+    title:
+      "KiloIT, an innovative IT company, celebrated the end of its first season with a group photo of its team. Composed of college students selected for their software skills, the team spent the season learning and collaborating on projects. This photo captures their camaraderie and the valuable experiences they gained, highlighting KiloIT's commitment to empowering the next generation of tech talent.",
+    img: require("../../assets/image/TeamSide1.jpg"),
+  },
+  {
+    id: 2,
+    title:
+      "KiloIT, an innovative IT company, celebrated the end of its first season with a group photo of its team. Composed of college students selected for their software skills, the team spent the season learning and collaborating on projects. This photo captures their camaraderie and the valuable experiences they gained, highlighting KiloIT's commitment to empowering the next generation of tech talent.",
+    img: require("../../assets/image/TeamSide1.jpg"),
+  },
+  {
+    id: 3,
+    title:
+      "KiloIT, an innovative IT company, celebrated the end of its first season with a group photo of its team. Composed of college students selected for their software skills, the team spent the season learning and collaborating on projects. This photo captures their camaraderie and the valuable experiences they gained, highlighting KiloIT's commitment to empowering the next generation of tech talent.",
+    img: require("../../assets/image/TeamSide1.jpg"),
+  },
+];
+
 // Now the titles are updated and more descriptive for user interaction
 
-export { dataSkill, dataProject, dataCourse, dataTeam };
+export { dataSkill, dataProject, dataCourse, dataTeam, dataPost };

@@ -4,7 +4,7 @@ import HomeImg from "../../assets/image/HomeImage.png";
 const HomePage = () => {
   return (
     <div className="row my-2">
-      <div className="col-lg-6 mt-5">
+      <div className="col-lg-6">
         <div class=" row">
           <div class="text-dark">
             <h1 className="display-4 text-dark text-center fw-bold">
