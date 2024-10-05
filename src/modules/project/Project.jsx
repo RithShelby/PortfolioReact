@@ -13,18 +13,18 @@ const Project = () => {
           Here are few projects, you can demo and take a source code.
         </p>
       </div>
-      <div className="row mx-5">
+      <div className="row mx-1 ">
         {" "}
         {dataProject.map((item) => {
           return (
-            <div className="col-lg-4 col-md-6 col-sm-12 p-3">
+            <div className="col-lg-4 col-md-6 col-sm-12 py-4">
               <div
                 style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
                 className="card border border-0 rounded-4 w-100 overflow-hidden card_hover h-100"
                 key={item.id}
               >
                 <img
-                  className="img-fluid card-img-top rounded-4 m-auto "
+                  className="img-fluid card-img-top rounded-4  "
                   src={item.img}
                   alt=""
                 />
