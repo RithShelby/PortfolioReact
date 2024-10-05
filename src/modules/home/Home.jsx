@@ -1,13 +1,15 @@
 import React from "react";
 
 import HomeImg from "../../assets/image/HomeImage.png";
+import Swiper from "../swiper/swiper";
 const HomePage = () => {
   return (
-    <div className="row my-2">
+    <div className="row my-2 animate__animated  animate__zoomInDown">
+      {/* <Swiper /> */}
       <div className="col-lg-6">
         <div class=" row">
           <div class="text-dark">
-            <h1 className="display-4 text-dark text-center fw-bold">
+            <h1 className="display-4 text-dark text-center fw-bold  animate__bounce">
               Who am I ?
             </h1>
             <div class="roller text-center">

@@ -16,9 +16,13 @@ const About = () => {
           <img className="w-75 m-auto rounded-2" src={AboutImg} alt="" />
         </div>
         <div className="col-lg-6 col-md-12 col-sm-12 mt-5   ">
-          <h1 className="display-1 about_content ">I'm John Rith</h1>
+          <h1 className="display-1 about_content animate__animated  animate__wobble">
+            I'm John Rith
+          </h1>
           <h1 className="display-1 about_content">Web</h1>
-          <h1 className="display-1 about_content">React JS</h1>
+          <h1 className="display-1 about_content  animate__animated animate__swing">
+            React JS
+          </h1>
           <h5 className="about_content">Based in Phnom Penh , Cambodia</h5>
           <div className="row text-secondary">
             <p className="fs-6">
@@ -75,7 +79,7 @@ const About = () => {
                   {" "}
                   <div
                     key={item.id}
-                    className="card border border-0 rounded-4"
+                    className="card border border-0 rounded-4 animate__animated  animate__fadeIn"
                     style={{
                       width: "25rem",
                       boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",

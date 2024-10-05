@@ -5,6 +5,11 @@ import { FaBarsProgress } from "react-icons/fa6";
 import MobileNav from "./mobileNav";
 import TopMobileNav from "./topMobileNav";
 const Narbar = () => {
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleClick = (link) => {
+    setActiveLink(link);
+  };
   const [top, setTop] = useState(true);
   useEffect(() => {
     const scrollHandler = () => {
@@ -16,7 +21,7 @@ const Narbar = () => {
     };
   }, [top]);
   return (
-    <div className="my-5">
+    <div className="my-5 row">
       {" "}
       <nav
         style={{ height: "80px" }}
@@ -24,7 +29,7 @@ const Narbar = () => {
           !top ? "navbar-blur" : ""
         }`}
       >
-        <Link className="navbar-brand fw-bold " href="#">
+        <Link className="fw-bold animate__animated animate__jello " href="#">
           @JohnRith
           <Currentdate />
         </Link>
@@ -46,22 +51,57 @@ const Narbar = () => {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link
+                  onClick={() => handleClick("home")}
+                  className={`nav-link nav-link-hover ${
+                      activeLink === "home" ? "text-decoration-underline" : ""
+                  }`}
+                  to="/"
+              >
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about_me">
+              <Link
+                  onClick={() => handleClick("about_me")}
+                  className={`nav-link nav-link-hover ${
+                      activeLink === "about_me" ? "text-decoration-underline" : ""
+                  }`}
+                  to="/about_me"
+              >
                 About
               </Link>
             </li>
+            {/*<li className="nav-item">*/}
+            {/*  <Link*/}
+            {/*      onClick={() => handleClick("resume")}*/}
+            {/*      className={`nav-link nav-link-hover ${*/}
+            {/*          activeLink === "resume" ? "text-decoration-underline" : ""*/}
+            {/*      }`}*/}
+            {/*      to="/resume"*/}
+            {/*  >*/}
+            {/*    Resume*/}
+            {/*  </Link>*/}
+            {/*</li>*/}
             <li className="nav-item">
-              <Link className="nav-link" to="/project">
+              <Link
+                  onClick={() => handleClick("project")}
+                  className={`nav-link nav-link-hover ${
+                      activeLink === "project" ? "text-decoration-underline" : ""
+                  }`}
+                  to="/project"
+              >
                 My Project
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/team-photo">
+              <Link
+                  onClick={() => handleClick("team-photo")}
+                  className={`nav-link nav-link-hover ${
+                      activeLink === "team-photo" ? "text-decoration-underline" : ""
+                  }`}
+                  to="/team-photo"
+              >
                 Team Photo
               </Link>
             </li>
@@ -69,7 +109,13 @@ const Narbar = () => {
         </div>
         <ul className="navbar-nav">
           <li className="nav-item rounded-5 btn btn-light">
-            <Link className="nav-link" to="/contact-me">
+            <Link
+                onClick={() => handleClick("contact-me")}
+                className={`nav-link nav-link-hover ${
+                    activeLink === "contact-me" ? "text-decoration-underline" : ""
+                }`}
+                to="/contact-me"
+            >
               Contact Me
             </Link>
           </li>

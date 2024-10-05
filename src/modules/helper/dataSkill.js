@@ -57,7 +57,8 @@ const dataSkill = [
 const dataProject = [
   {
     id: 1,
-    img: require("../../assets/image/htmlcssPort.png"),
+    img: require("../../assets/image/1.png"),
+    title : "First Portfolio's Team",
     desc: "Build a Responsive Portfolio website using html,css and boostrap.",
     date: "12/11/23",
     demo: "https://dev-portfolio-ten-mu.vercel.app/",
@@ -65,7 +66,8 @@ const dataProject = [
   },
   {
     id: 2,
-    img: require("../../assets/image/haircut.png"),
+    img: require("../../assets/image/2.png"),
+    title : "HairCut Template ",
     desc: "Build a Template haircut website using html,css,boostrap and js.",
     date: "30/12/23",
     demo: "https://haircut-template.vercel.app/",
@@ -73,7 +75,8 @@ const dataProject = [
   },
   {
     id: 3,
-    img: require("../../assets/image/Screenshot 2024-05-05 145234.png"),
+    img: require("../../assets/image/3.png"),
+    title : "Amado Ecommerce Shop Template",
     desc: "Amado Clone with Side bar , using react js with boostrap.",
     date: "01/01/24",
     demo: "https://amado-template.vercel.app/home",
@@ -81,27 +84,20 @@ const dataProject = [
   },
   {
     id: 4,
-    img: require("../../assets/image/admin.png"),
-    desc: "Admin Ecommerce using React js with Redux managment state,integration axios api.",
+    img: require("../../assets/image/4.png"),
+    title: "Admin Booking Movie",
+    desc: "Admin Booking Movie Managements using ReactJs & Firebase",
     date: "12/05/24",
-    demo: "https://dev-portfolio-ten-mu.vercel.app/",
-    github: "https://github.com/RithShelby/html-css-portfolio",
+    demo: "https://movie-booking-silk.vercel.app/",
+    github: "https://github.com/RithShelby/MovieBooking",
   },
   {
     id: 5,
-    img: require("../../assets/image/admin.png"),
+    img: require("../../assets/image/5.png"),
+    title: "Admin Ecommerce",
     desc: "Admin Ecommerce using React js with Redux managment state,integration axios api.",
     date: "12/05/24",
-    demo: "https://dev-portfolio-ten-mu.vercel.app/",
-    github: "https://github.com/RithShelby/html-css-portfolio",
-  },
-  {
-    id: 6,
-    img: require("../../assets/image/admin.png"),
-    desc: "Admin Ecommerce using React js with Redux managment state,integration axios api.",
-    date: "12/05/24",
-    demo: "https://dev-portfolio-ten-mu.vercel.app/",
-    github: "https://github.com/RithShelby/html-css-portfolio",
+    github: "https://github.com/RithShelby/AdminEcommerce",
   },
 ];
 const dataCourse = [

@@ -16,7 +16,7 @@ const RecCourse = () => {
   };
 
   return (
-    <div className="row my-3">
+    <div className="row my-3 ">
       <div className="d-flex flex-row align-items-center justify-content-start ">
         <span
           style={{ width: "80px", height: "1px" }}

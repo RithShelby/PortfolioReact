@@ -5,7 +5,7 @@ import Currentdate from "./CurrentDate/Currentdate";
 const Layout = () => {
   return (
     <div className="container-fluid">
-      <div className="row">
+      <div>
         <Narbar />
         <Outlet />
       </div>

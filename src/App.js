@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "./modules/layoutt/layout";
@@ -9,7 +9,14 @@ import Project from "./modules/project/Project";
 import TeamPhoto from "./modules/teamphoto/TeamPhoto";
 import { ChakraProvider } from "@chakra-ui/react";
 import Contact from "./modules/contact/Contact";
+import "animate.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Resume from "./modules/Resume/Resume";
 const App = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <ChakraProvider>
       <BrowserRouter>
@@ -18,6 +25,7 @@ const App = () => {
             <Route index element={<HomePage />} />
             <Route path="/about_me" element={<About />} />
             <Route path="/project" element={<Project />} />
+            {/*<Route path="/resume" element={<Resume />} />*/}
             <Route path="/team-photo" element={<TeamPhoto />} />
             <Route path="/contact-me" element={<Contact />} />
           </Route>
