@@ -1,140 +1,155 @@
-import {
-  Avatar,
-  Box,
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Flex,
-  Heading,
-  IconButton,
-  Image,
-  Text,
-  useToast,
-} from "@chakra-ui/react";
 import React, { useState } from "react";
-import { Stack } from "react-bootstrap";
-import { BiChat, BiLike, BiShare } from "react-icons/bi";
-import { BsThreeDotsVertical } from "react-icons/bs";
-import { FaRegComment } from "react-icons/fa6";
-import { PiShareFat } from "react-icons/pi";
-import mainPro from "../../assets/image/TeamSide1.jpg";
-import Profile from "../../assets/image/profilePic.jpg";
-import { dataPost, dataTeam } from "../helper/dataSkill";
-import Currentdate from "../layoutt/CurrentDate/Currentdate";
+import { FaHeart, FaRegComment } from "react-icons/fa";
+import { RiShareForwardFill } from "react-icons/ri";
+import CustomModal from "../widget/CustomModal";
+import { dataTeam } from "../helper/dataSkill";
+import {Link} from "react-router-dom";
+import {Form} from "react-bootstrap";
+
 const TeamPhoto = () => {
-  const [isLike, setLike] = useState(false);
+  const [like, setLike] = useState(false);
+  const [showModal, setModal] = useState(false);
+  const [selectImg, setSelect] = useState(null);
+  const [showCommentInput, setShowCommentInput] = useState(false);
+  const [commentText, setCommentText] = useState("");
+  const [comments, setComments] = useState([]);
+  const [showOverlay, setShowOverlay] = useState(false); // State for the overlay effect
+
   const handleLike = () => {
-    setLike(!isLike);
+    setLike(!like);
   };
-  const toast = useToast();
+
+  const handleShow = (item) => {
+    setModal(true);
+    setSelect(item);
+    setComments([]); // Reset comments for each image
+    setLike(false); // Reset like for each image
+    setCommentText(""); // Reset comment text for each image
+    setShowCommentInput(false); // Optionally reset the comment input visibility
+  };
+
+
+  const handleClose = () => {
+    setModal(false);
+    setSelect(null);
+  };
+
+  const handleDoubleClick = () => {
+    setLike(true);
+    setShowOverlay(true); // Show overlay immediately
+    setTimeout(() => {
+      setShowOverlay(false); // Hide overlay after 1 second
+    }, 1000);
+  };
+
+  const handleCommentIconClick = () => {
+    setShowCommentInput(!showCommentInput);
+  };
+
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
+    if (commentText.trim()) {
+      setComments([...comments, commentText]);
+      setCommentText("");
+    }
+  };
+
   return (
-    <div className="row m-auto d-flex ">
-      <div className="col-lg-8 col-md-12 col-sm-12">
-        {dataPost.map((post) => {
-          return (
-            <div className="">
-              <Card maxW="100%" className="m-auto mb-4 rounded-4">
-                <div className="d-flex justify-content-between p-3">
-                  <div className="d-flex align-items-center ">
-                    <img
-                      src={Profile}
-                      className="rounded-5"
-                      style={{ width: "50px", height: "80%" }}
-                      alt="Avatar"
-                    />
-                    <div className="lh-sm d-flex flex-column ms-2 mt-2">
-                      <span className="fw-bold">John-Rith</span>
-                      <span>
-                        {" "}
-                        <Currentdate />
-                      </span>
-                    </div>
-                  </div>
-                  <IconButton
-                    variant="ghost"
-                    colorScheme="gray"
-                    aria-label="See menu"
-                    icon={<BsThreeDotsVertical />}
-                  />
-                </div>
-                <p className="px-2">{post.title}</p>
-                <Image objectFit="cover" src={post.img} alt="Chakra UI" />
-                <div className="d-flex justify-content-evenly align-items-center my-3">
-                  <div
-                    onClick={handleLike}
-                    className={`${
-                      isLike
-                        ? "icon-hover d-flex fs-6 m-auto text-primary rounded-5"
-                        : "icon-hover d-flex fs-6 m-auto text-dark rounded-5"
-                    }`}
-                  >
-                    <BiLike className="m-auto me-2 fs-5" />
-                    <button>Like</button>
-                  </div>
-                  <div className="d-flex icon-hover fs-6 m-auto">
-                    {" "}
-                    <FaRegComment className="m-auto me-2 fs-5" />
-                    <button>Comment</button>
-                  </div>
-                  <div
-                    className="d-flex icon-hover fs-6 m-auto"
-                    onClick={() =>
-                      toast({
-                        title: "Thank you for sharing !",
-                        description: "appreciate it 😍",
-                        status: "success",
-                        duration: 9000,
-                        isClosable: true,
-                      })
-                    }
-                  >
-                    <PiShareFat className="m-auto me-2 fs-5" />
-                    <button>Share</button>
-                  </div>
-                </div>
-              </Card>
+      <div className="row p-2 text-center">
+        <div className="row">
+          <h3 className="fw-bold">My Favorite Gallery</h3>
+          <p className="text-secondary">
+            Here are a few images. You can see more detail by clicking on an image.
+          </p>
+        </div>
+        {dataTeam.map((item) => (
+            <div key={item.id} className="col-lg-4 col-md-4 col-sm-12 p-3">
+              <img
+                  className="img-hover w-100 h-100 rounded-4"
+                  src={item.image}
+                  alt={item.title}
+                  onClick={() => handleShow(item)}
+              />
             </div>
-          );
-        })}
-      </div>
-      <div className="col-lg-4 col-md-12 col-sm-12 d-flex flex-column ">
-        {dataTeam.map((items) => {
-          return (
-            <div className="d-flex justify-content-end">
-              <Card
-                maxW={"100%"}
-                style={{ width: "25rem" }}
-                className="rounded-4 mb-4"
-                direction={{ base: "column", sm: "col" }}
-                overflow="hidden"
-                variant="outline"
-              >
-                <img
-                  objectFit="cover"
-                  maxW={{ base: "100%", sm: "200px" }}
-                  src={items.image}
-                />
-                <Stack>
-                  <CardBody>
-                    <Heading size="md">{items.title}</Heading>
-                    <Text py="">{items.desc}</Text>
-                    <Button
-                      className="text-uppercase  w-100"
-                      variant="solid"
-                      colorScheme="gray"
+        ))}
+        {selectImg && (
+            <CustomModal
+                show={showModal}
+                onHide={handleClose}
+                body={
+                  <div>
+                    <div
+                        className="position-relative"
+                        onDoubleClick={handleDoubleClick}
+                        style={{ cursor: "pointer" }}
                     >
-                      {items.detail}
-                    </Button>
-                  </CardBody>
-                </Stack>
-              </Card>
-            </div>
-          );
-        })}
+                      <img
+                          src={selectImg.image}
+                          alt={selectImg.title}
+                          className="w-100 rounded-3"
+                      />
+                      {/* Overlay Heart Icon */}
+                      {showOverlay && (
+                          <FaHeart
+                              className="text-danger position-absolute top-50 start-50 translate-middle"
+                              style={{ fontSize: "4rem", opacity: 0.8 }}
+                          />
+                      )}
+                    </div>
+                    <div className="m-3 d-flex justify-content-start align-items-center">
+                      <FaHeart
+                          onClick={handleLike}
+                          className={`${like ? "text-danger" : "text-dark"} fs-3`}
+                          style={{ cursor: "pointer" }}
+                      />
+                      <FaRegComment
+                          className="fs-3 mx-3"
+                          style={{ cursor: "pointer" }}
+                          onClick={handleCommentIconClick}
+                      />
+                      <Link
+                          className="nav-link"
+                          to="https://www.facebook.com/sharer/sharer.php?u=https://john-rith-portfolio.vercel.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                      >
+                        <RiShareForwardFill className="fs-3" style={{ cursor: "pointer" }} />
+                      </Link>
+                    </div>
+                    <p className="p-2">{selectImg.desc}</p>
+                    {/* Comment Input */}
+                    {showCommentInput && (
+                        <Form className="position-relative mx-2">
+                          <Form.Control
+                              type="text"
+                              className="mb-2 border-0 no-focus"
+                              placeholder="Write a comment..."
+                              value={commentText}
+                              onChange={(e) => setCommentText(e.target.value)}
+                          />
+                          <hr/>
+                          {commentText && (
+                              <p
+                                  className="position-absolute top-0 end-0 align-items-center mt-1 text-primary fw-bold"
+                                  onClick={handleCommentSubmit}
+                                  style={{ cursor: "pointer" }}
+                              >
+                                Sent
+                              </p>
+                          )}
+                        </Form>
+                    )}
+                    {/* Display Comments */}
+                    {comments.map((comment, index) => (
+                        <p key={index} className="ms-2">
+                          anonymous person : {comment}
+                        </p>
+                    ))}
+                  </div>
+                }
+            />
+        )}
       </div>
-    </div>
   );
 };
 

@@ -13,7 +13,7 @@ const Currentdate = () => {
     return () => clearInterval(intervalId);
   }, []);
   return (
-    <div className="fw-normal fs-6">
+    <div className="fw-normal">
       <p>{currentDate.toLocaleString()}</p>
     </div>
   );

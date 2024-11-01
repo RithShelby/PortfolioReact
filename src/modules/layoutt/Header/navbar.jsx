@@ -29,7 +29,7 @@ const Narbar = () => {
           !top ? "navbar-blur" : ""
         }`}
       >
-        <Link className="fw-bold animate__animated animate__jello " href="#">
+        <Link className="fw-bold animate__animated animate__jello nav-link" to="/">
           @JohnRith
           <Currentdate />
         </Link>

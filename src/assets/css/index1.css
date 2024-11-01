@@ -99,3 +99,14 @@ transform: scale(1.2);
 .icon-hover:hover{
   transform: scale(1.2);
 }
+.img-hover{
+  transition: all 0.5s;
+}
+.img-hover:hover{
+  transform: scale(95%);
+}
+.no-focus:focus {
+  outline: none; /* Remove the outline */
+  box-shadow: none; /* Remove the box shadow */
+  border-color: transparent; /* Optionally set border color */
+}

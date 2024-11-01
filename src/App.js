@@ -7,18 +7,15 @@ import About from "./modules/about/About";
 import "../src/assets/css/index1.css";
 import Project from "./modules/project/Project";
 import TeamPhoto from "./modules/teamphoto/TeamPhoto";
-import { ChakraProvider } from "@chakra-ui/react";
 import Contact from "./modules/contact/Contact";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Resume from "./modules/Resume/Resume";
 const App = () => {
   useEffect(() => {
     AOS.init();
   }, []);
   return (
-    <ChakraProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -31,7 +28,6 @@ const App = () => {
           </Route>
         </Routes>
       </BrowserRouter>
-    </ChakraProvider>
   );
 };
 

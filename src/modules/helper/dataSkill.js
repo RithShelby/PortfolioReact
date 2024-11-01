@@ -134,7 +134,7 @@ const dataTeam = [
     id: 1,
     image: require("../../assets/image/teamkilo1.JPG"),
     title: "KiloIT Team Collaborating",
-    desc: "Members of the KiloIT team hard at work, collaborating on software projects in a modern office environment. Their dedication and teamwork are evident as they focus on their laptops.",
+    desc: "That was my team practice on making basic website using html,css and js.",
     detail: "more",
   },
   {
@@ -151,28 +151,31 @@ const dataTeam = [
     desc: "A KiloIT team meeting in progress, where members discuss and share ideas. The image captures the collaborative spirit and active engagement of the team in a structured yet open environment.",
     detail: "more",
   },
-];
-const dataPost = [
   {
-    id: 1,
-    title:
-      "KiloIT, an innovative IT company, celebrated the end of its first season with a group photo of its team. Composed of college students selected for their software skills, the team spent the season learning and collaborating on projects. This photo captures their camaraderie and the valuable experiences they gained, highlighting KiloIT's commitment to empowering the next generation of tech talent.",
-    img: require("../../assets/image/TeamSide1.jpg"),
+    id: 4,
+    image: require("../../assets/image/team2.jpg"),
+    title: "KiloIT Team Meeting",
+    desc: "A KiloIT team meeting in progress, where members discuss and share ideas. The image captures the collaborative spirit and active engagement of the team in a structured yet open environment.",
+    detail: "more",
   },
+
   {
-    id: 2,
-    title:
-      "KiloIT, an innovative IT company, celebrated the end of its first season with a group photo of its team. Composed of college students selected for their software skills, the team spent the season learning and collaborating on projects. This photo captures their camaraderie and the valuable experiences they gained, highlighting KiloIT's commitment to empowering the next generation of tech talent.",
-    img: require("../../assets/image/TeamSide1.jpg"),
+    id: 5,
+    image: require("../../assets/image/TeamSide1.jpg"),
+    title: "KiloIT Team Meeting",
+    desc: "A KiloIT team meeting in progress, where members discuss and share ideas. The image captures the collaborative spirit and active engagement of the team in a structured yet open environment.",
+    detail: "more",
   },
+
   {
-    id: 3,
-    title:
-      "KiloIT, an innovative IT company, celebrated the end of its first season with a group photo of its team. Composed of college students selected for their software skills, the team spent the season learning and collaborating on projects. This photo captures their camaraderie and the valuable experiences they gained, highlighting KiloIT's commitment to empowering the next generation of tech talent.",
-    img: require("../../assets/image/TeamSide1.jpg"),
+    id: 6,
+    image: require("../../assets/image/team3.JPG"),
+    title: "KiloIT Team Meeting",
+    desc: "A KiloIT team meeting in progress, where members discuss and share ideas. The image captures the collaborative spirit and active engagement of the team in a structured yet open environment.",
+    detail: "more",
   },
 ];
 
 // Now the titles are updated and more descriptive for user interaction
 
-export { dataSkill, dataProject, dataCourse, dataTeam, dataPost };
+export { dataSkill, dataProject, dataCourse, dataTeam };

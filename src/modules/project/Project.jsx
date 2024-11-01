@@ -8,7 +8,7 @@ const Project = () => {
     <div className="col-lg-12 text-center">
       <div className="row">
         {" "}
-        <h1 className="fw-bold">My Recent Projects</h1>
+        <h3 className="fw-bold">My Recent Projects</h3>
         <p className="text-secondary">
           Here are few projects, you can demo and take a source code.
         </p>
