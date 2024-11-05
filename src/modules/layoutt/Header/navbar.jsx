@@ -21,7 +21,7 @@ const Narbar = () => {
     };
   }, [top]);
   return (
-    <div className="row">
+    <div>
       <nav style={{ height: "80px" }} className={`navbar navbar-expand-md px-4 fixed-top d-none d-lg-flex border border-1 ${
           !top ? "navbar-blur" : ""
         }`}>

@@ -15,51 +15,51 @@ const handleClick = (link) =>{
   setActive(link);
 }
   return (
-    <div className="fixed-bottom bg-light text-secondary d-lg-none d-md-flex">
-      <ul className="d-flex justify-content-between align-items-center w-100 m-0 p-0 p-3">
+    <nav className="fixed-bottom bg-dark text-secondary d-lg-none d-md-flex align-items-center pt-4">
+      <ul className="d-flex justify-content-between p-0">
         <Link
             onClick={() => handleClick("home")}
-            className={`nav-link nav-mobile-hover ${active === "home" ? "text-dark fw-bold" : ""}`} to="/">
-          <div className="d-flex flex-column align-items-center">
-            <GrHomeRounded className="fs-3" />
+            className={`nav-link nav-mobile-hover ${active === "home" ? "text-light fw-bold" : ""}`} to="/">
+          <div className="d-flex flex-column align-items-center fs-6">
+            <GrHomeRounded  />
             Home
           </div>
         </Link>
         <Link
             onClick={() => handleClick("about")}
-            className={`nav-link nav-mobile-hover ${active === "about" ? "text-dark fw-bold" : ""}`} to="/about_me">
-          <div className="d-flex flex-column align-items-center">
-            <LuFocus className="fs-3" />
+            className={`nav-link nav-mobile-hover ${active === "about" ? "text-light fw-bold" : ""}`} to="/about_me">
+          <div className="d-flex flex-column align-items-center fs-6">
+            <LuFocus />
             About
           </div>
         </Link>
         <Link
             onClick={() => handleClick("project")}
-            className={`nav-link nav-mobile-hover ${active === "project" ? "text-dark fw-bold" : ""}`} to="/project">
-          <div className="d-flex flex-column align-items-center">
-            <MdSpaceDashboard className="fs-3" />
+            className={`nav-link nav-mobile-hover ${active === "project" ? "text-light fw-bold" : ""}`} to="/project">
+          <div className="d-flex flex-column align-items-center fs-6">
+            <MdSpaceDashboard />
             My Project
           </div>
         </Link>
         <Link
             onClick={() => handleClick("team-photo")}
-            className={`nav-link nav-mobile-hover ${active === "team-photo" ? "text-dark fw-bold" : ""}`} to="/team-photo">
-          <div className="d-flex flex-column align-items-center">
-            <IoMdPhotos className="fs-3" />
+            className={`nav-link nav-mobile-hover ${active === "team-photo" ? "text-light fw-bold" : ""}`} to="/team-photo">
+          <div className="d-flex flex-column align-items-center fs-6">
+            <IoMdPhotos  />
             Team Photo
           </div>
         </Link>
         <Link
             onClick={() => handleClick("contact-me")}
-            className={`nav-link nav-mobile-hover ${active === "contact-me" ? "text-dark fw-bold" : ""}`}
+            className={`nav-link nav-mobile-hover ${active === "contact-me" ? "text-light fw-bold" : ""}`}
             to="/contact-me">
-          <div className="d-flex flex-column align-items-center">
-            <FiUser className="fs-3" />
+          <div className="d-flex flex-column align-items-center fs-6">
+            <FiUser />
             Contact
           </div>
         </Link>
       </ul>
-    </div>
+    </nav>
   );
 };
 
