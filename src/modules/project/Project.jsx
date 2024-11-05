@@ -5,7 +5,7 @@ import { CgWebsite } from "react-icons/cg";
 import { FaGithub } from "react-icons/fa";
 const Project = () => {
   return (
-    <div className="col-lg-12 text-center">
+    <div className="col-lg-12 text-center pb-5 mb-5">
       <div className="row">
         {" "}
         <h3 className="fw-bold">My Recent Projects</h3>
@@ -13,11 +13,11 @@ const Project = () => {
           Here are few projects, you can demo and take a source code.
         </p>
       </div>
-      <div className="row mx-1 ">
+      <div className="row mx-1">
         {" "}
         {dataProject.map((item) => {
           return (
-            <div className="col-lg-4 col-md-6 col-sm-12 py-4">
+            <div data-aos="zoom-in" className="col-lg-4 col-md-6 col-sm-12 py-4">
               <div
                 style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
                 className="card border border-0 rounded-4 w-100 overflow-hidden card_hover h-100"

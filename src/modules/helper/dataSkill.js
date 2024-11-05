@@ -1,3 +1,7 @@
+import {SlLocationPin} from "react-icons/sl";
+import {MdOutlineMailOutline} from "react-icons/md";
+import {PiTelegramLogoLight} from "react-icons/pi";
+
 const dataSkill = [
   {
     id: 1,
@@ -53,6 +57,25 @@ const dataSkill = [
     type: "Tools",
     img: "https://cdn-icons-png.flaticon.com/256/2111/2111656.png",
   },
+  {
+    id: 10,
+    name: "Firebase",
+    type: "Tools",
+    img: "https://avatars.githubusercontent.com/u/1335026?s=200&v=4",
+  },
+  {
+    id: 11,
+    name: "Click Up",
+    type: "Tools",
+    img: "https://seeklogo.com/images/C/clickup-symbol-logo-BB24230BBB-seeklogo.com.png",
+  },
+  {
+    id: 12,
+    name: "IntelliJ IDEA",
+    type: "Tools",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZHQE89O5n7JuJZLQE3MCBysxZx3Y-JMiSGQ&s",
+  },
+
 ];
 const dataProject = [
   {
@@ -99,36 +122,55 @@ const dataProject = [
     date: "12/05/24",
     github: "https://github.com/RithShelby/AdminEcommerce",
   },
+  {
+    id: 6,
+    img: require("../../assets/image/MovieApp.png"),
+    title : "UpComingApp",
+    desc: "Movie Booking is coming soon",
+    date: "01/01/24",
+    demo: "",
+    github: "",
+  },
 ];
 const dataCourse = [
   {
     id: 1,
-    headtitle: "HTML&CSS",
-    title: "Mastering HTML & CSS with Net Ninja",
+    headtitle: "HTML & CSS",
+    title: "In-Depth HTML & CSS: A Complete Guide with Net Ninja",
     imgCourse: "https://www.youtube.com/embed/hu-q2zYwEYs?si=Y2D8N9xUzrNwX6bD",
   },
   {
     id: 2,
-    headtitle: "back-end",
-    title: "Advanced Back-End Development Techniques",
-    imgCourse:
-      "https://www.youtube.com/embed/zb3Qk8SG5Ms?si=TZLOq8abXLH_IFwQ&amp",
+    headtitle: "Bootstrap with Net Ninja",
+    title: "Mastering Bootstrap for Responsive Web Design",
+    imgCourse: "https://www.youtube.com/embed/O_9u1P5YjVc?si=1u3UCspoydxEOnEt",
   },
   {
     id: 3,
-    headtitle: "Js Modern Concept",
-    title: "Exploring Modern JavaScript Concepts",
-    imgCourse:
-      "https://www.youtube.com/embed/iWOYAxlnaww?si=z86zEaFkO8i4QS2I&amp",
+    headtitle: "Modern JavaScript",
+    title: "Advanced JavaScript: Key Concepts & Best Practices",
+    imgCourse: "https://www.youtube.com/embed/iWOYAxlnaww?si=z86zEaFkO8i4QS2I",
   },
   {
     id: 4,
-    headtitle: "React Js modern",
-    title: "Mastering React.js Modern Development",
-    imgCourse:
-      "https://www.youtube.com/embed/j942wKiXFu8?si=Ma-KvVvtjIVdZlaQ&amp",
+    headtitle: "React.js",
+    title: "React.js for the Modern Web Developer",
+    imgCourse: "https://www.youtube.com/embed/j942wKiXFu8?si=Ma-KvVvtjIVdZlaQ",
+  },
+  {
+    id: 5,
+    headtitle: "Firebase Essentials",
+    title: "Firebase Fundamentals for Web Applications",
+    imgCourse: "https://www.youtube.com/embed/2hR-uWjBAgw?si=9Mc_1Do2GZ8sX15t",
+  },
+  {
+    id: 6,
+    headtitle: "React.js with Email.js",
+    title: "Integrating Email.js with React.js: A Hands-On Guide",
+    imgCourse: "https://www.youtube.com/embed/Lz8yx-zn-O4?si=bhpLNhUmSmwkIo8i",
   },
 ];
+
 const dataTeam = [
   {
     id: 1,
@@ -175,7 +217,27 @@ const dataTeam = [
     detail: "more",
   },
 ];
-
+const dataContact = [
+      {
+        id : 1,
+        title : "Address",
+        desc : "Phnom Penh City",
+        icon : <SlLocationPin />
+      },
+      {
+        id : 2,
+        title : "Email",
+        desc : "chhunnatharith@gmail.com",
+        icon : <MdOutlineMailOutline />
+      },
+      {
+        id : 3,
+        title : "Telegram",
+        desc : "017 225 628",
+        icon : <PiTelegramLogoLight />
+      },
+]
+;
 // Now the titles are updated and more descriptive for user interaction
 
-export { dataSkill, dataProject, dataCourse, dataTeam };
+export { dataSkill, dataProject, dataCourse, dataTeam , dataContact };

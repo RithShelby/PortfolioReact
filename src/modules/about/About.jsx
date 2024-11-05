@@ -10,12 +10,12 @@ const About = () => {
   };
   const filterSkill = dataSkill.filter((e) => e.type === filterData);
   return (
-    <div className="col-lg-12 my-3">
+    <div className="col-lg-12">
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12 d-flex">
           <img className="w-75 m-auto rounded-2" src={AboutImg} alt="" />
         </div>
-        <div className="col-lg-6 col-md-12 col-sm-12 mt-5   ">
+        <div className="col-lg-6 col-md-12 col-sm-12 mt-5">
           <h1 className="display-1 about_content animate__animated  animate__wobble">
             I'm John Rith
           </h1>
@@ -25,7 +25,7 @@ const About = () => {
           </h1>
           <h5 className="about_content">Based in Phnom Penh , Cambodia</h5>
           <div className="row text-secondary">
-            <p className="fs-6">
+            <p className="fs-5">
               Once upon a time, there was a young boy with a big dream to be
               <span className="mx-2 fw-bold">Web</span>
               developer . One day, while sitting in a coffee shop, he met a man
@@ -53,7 +53,7 @@ const About = () => {
           <h1 className=" fs-1 fw-bold">Skills</h1>
         </div>
         {/* Skill and Tool */}
-        <div className="">
+        <div>
           <div className="d-flex flex-row justify-content-start align-items-center ms-5">
             <button
               className={`btn me-3 ${
@@ -75,11 +75,12 @@ const About = () => {
           <div className="row">
             {filterSkill.map((item) => {
               return (
-                <div className="col-md-4 card_hover d-flex justify-content-center my-3">
+                <div  className="col-md-4 card_hover d-flex justify-content-center my-3">
                   {" "}
                   <div
+                      data-aos="fade-up"
                     key={item.id}
-                    className="card border border-0 rounded-4 animate__animated  animate__fadeIn"
+                    className="card border border-0 rounded-4"
                     style={{
                       width: "25rem",
                       boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",

@@ -1,33 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import { FaHeart, FaRegComment } from "react-icons/fa";
 import { RiShareForwardFill } from "react-icons/ri";
 import CustomModal from "../widget/CustomModal";
 import { dataTeam } from "../helper/dataSkill";
-import {Link} from "react-router-dom";
-import {Form} from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Form } from "react-bootstrap";
 
 const TeamPhoto = () => {
   const [like, setLike] = useState(false);
   const [showModal, setModal] = useState(false);
   const [selectImg, setSelect] = useState(null);
   const [showCommentInput, setShowCommentInput] = useState(false);
-  const [commentText, setCommentText] = useState("");
   const [comments, setComments] = useState([]);
-  const [showOverlay, setShowOverlay] = useState(false); // State for the overlay effect
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [isCommentText, setIsCommentText] = useState(false);
+
+  const commentTextRef = useRef(""); // Ref to track comment text
+  const inputRef = useRef(null); // Ref to control the input field directly
 
   const handleLike = () => {
-    setLike(!like);
+    setLike((prev) => !prev);
   };
 
   const handleShow = (item) => {
     setModal(true);
     setSelect(item);
-    setComments([]); // Reset comments for each image
-    setLike(false); // Reset like for each image
-    setCommentText(""); // Reset comment text for each image
-    setShowCommentInput(false); // Optionally reset the comment input visibility
+    setComments([]);
+    setLike(false);
+    commentTextRef.current = "";
+    setIsCommentText(false);
+    setShowCommentInput(false);
   };
-
 
   const handleClose = () => {
     setModal(false);
@@ -36,26 +39,39 @@ const TeamPhoto = () => {
 
   const handleDoubleClick = () => {
     setLike(true);
-    setShowOverlay(true); // Show overlay immediately
+    setShowOverlay(true);
     setTimeout(() => {
-      setShowOverlay(false); // Hide overlay after 1 second
+      setShowOverlay(false);
     }, 1000);
   };
 
   const handleCommentIconClick = () => {
-    setShowCommentInput(!showCommentInput);
+    setShowCommentInput((prev) => !prev);
   };
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
-    if (commentText.trim()) {
-      setComments([...comments, commentText]);
-      setCommentText("");
+    if (commentTextRef.current.trim()) {
+      setComments((prevComments) => [...prevComments, commentTextRef.current]);
+      commentTextRef.current = "";
+      setIsCommentText(false);
+
+      // Clear the input field
+      if (inputRef.current) {
+        inputRef.current.value = "";
+      }
     }
   };
 
+  const handleCommentChange = (e) => {
+    commentTextRef.current = e.target.value;
+    setIsCommentText(!!e.target.value.trim());
+  };
+
+  const selectedImageDescription = useMemo(() => selectImg?.desc, [selectImg]);
+
   return (
-      <div className="row p-2 text-center">
+      <div className="row text-center mb-5">
         <div className="row">
           <h3 className="fw-bold">My Favorite Gallery</h3>
           <p className="text-secondary">
@@ -63,7 +79,7 @@ const TeamPhoto = () => {
           </p>
         </div>
         {dataTeam.map((item) => (
-            <div key={item.id} className="col-lg-4 col-md-4 col-sm-12 p-3">
+            <div key={item.id} className="col-lg-4 col-md-6 col-sm-12 p-3">
               <img
                   className="img-hover w-100 h-100 rounded-4"
                   src={item.image}
@@ -88,7 +104,6 @@ const TeamPhoto = () => {
                           alt={selectImg.title}
                           className="w-100 rounded-3"
                       />
-                      {/* Overlay Heart Icon */}
                       {showOverlay && (
                           <FaHeart
                               className="text-danger position-absolute top-50 start-50 translate-middle"
@@ -116,19 +131,18 @@ const TeamPhoto = () => {
                         <RiShareForwardFill className="fs-3" style={{ cursor: "pointer" }} />
                       </Link>
                     </div>
-                    <p className="p-2">{selectImg.desc}</p>
-                    {/* Comment Input */}
+                    <p className="p-2">{selectedImageDescription}</p>
                     {showCommentInput && (
-                        <Form className="position-relative mx-2">
+                        <Form className="position-relative mx-2" onSubmit={handleCommentSubmit}>
                           <Form.Control
                               type="text"
                               className="mb-2 border-0 no-focus"
                               placeholder="Write a comment..."
-                              value={commentText}
-                              onChange={(e) => setCommentText(e.target.value)}
+                              onChange={handleCommentChange}
+                              ref={inputRef} // Attach the input ref
                           />
-                          <hr/>
-                          {commentText && (
+                          <hr />
+                          {isCommentText && (
                               <p
                                   className="position-absolute top-0 end-0 align-items-center mt-1 text-primary fw-bold"
                                   onClick={handleCommentSubmit}
@@ -139,10 +153,9 @@ const TeamPhoto = () => {
                           )}
                         </Form>
                     )}
-                    {/* Display Comments */}
                     {comments.map((comment, index) => (
                         <p key={index} className="ms-2">
-                          anonymous person : {comment}
+                          anonymous person: {comment}
                         </p>
                     ))}
                   </div>

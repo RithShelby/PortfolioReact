@@ -16,7 +16,7 @@ const RecCourse = () => {
   };
 
   return (
-    <div className="row my-3 ">
+    <div className="row my-5">
       <div className="d-flex flex-row align-items-center justify-content-start ">
         <span
           style={{ width: "80px", height: "1px" }}
@@ -43,8 +43,8 @@ const RecCourse = () => {
         {filterData.map((items) => {
           return (
             <div className="col-md-6 my-3 " key={items.id}>
-              <div
-                className="card  border border-0 overflow-hidden rounded-5 text-center"
+              <div data-aos="zoom-in-down"
+                className="card border border-0 overflow-hidden rounded-5 text-center"
                 style={{
                   height: "100%",
                   boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
@@ -61,11 +61,11 @@ const RecCourse = () => {
                   <p className="fs-5 fw-bold">{items.title}</p>
                   <div class="ratio ratio-16x9">
                     <iframe
-                      className="card_hover"
+                      className=""
                       width="560"
                       height="315"
                       src={items.imgCourse}
-                      title="YouTube video "
+                      title="YouTube video"
                       allowfullscreen
                     ></iframe>
                   </div>

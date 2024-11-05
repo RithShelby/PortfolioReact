@@ -5,22 +5,21 @@ import Swiper from "../swiper/swiper";
 const HomePage = () => {
   return (
     <div className="row my-2 animate__animated  animate__zoomInDown">
-      {/* <Swiper /> */}
       <div className="col-lg-6">
-        <div class=" row">
-          <div class="text-dark">
+        <div className=" row">
+          <div className="text-dark">
             <h1 className="display-4 text-dark text-center fw-bold  animate__bounce">
               Who am I ?
             </h1>
-            <div class="roller text-center">
-              <span class="fs-4 fw-bold text-secondary" id="rolltext">
+            <div className="roller text-center">
+              <span className="fs-4 fw-bold text-secondary" id="rolltext">
                 Experienced on React Js
                 <br />
-                Redux Managment State
+                Redux Management State
                 <br />
-                Need Hiring !
+                Contact me if you interested!
                 <br />
-                <span class="text-dark" id="spare-time">
+                <span className="text-dark" id="spare-time">
                   That's All
                 </span>
               </span>
@@ -28,8 +27,8 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="text-start mt-5 ms-4">
-          <h2 className="text-uppercase text-center text-decoration-underline  mb-4">
+        <div className="text-center mt-5">
+          <h2 className="text-uppercase text-center text-decoration-underline mb-4 fw-bold">
             let me introduce myself
           </h2>
           <p className="fs-5 lh-lg text-secondary">

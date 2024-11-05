@@ -21,34 +21,16 @@ const Narbar = () => {
     };
   }, [top]);
   return (
-    <div className="my-5 row">
-      {" "}
-      <nav
-        style={{ height: "80px" }}
-        className={`navbar navbar-expand-md px-4 fixed-top d-none d-lg-flex border border-1 ${
+    <div className="row">
+      <nav style={{ height: "80px" }} className={`navbar navbar-expand-md px-4 fixed-top d-none d-lg-flex border border-1 ${
           !top ? "navbar-blur" : ""
-        }`}
-      >
-        <Link className="fw-bold animate__animated animate__jello nav-link" to="/">
+        }`}>
+        <Link onClick={() => handleClick("me")} className="fw-bold animate__animated animate__jello nav-link" to="/">
           @JohnRith
           <Currentdate />
         </Link>
-        <button
-          className="navbar-toggler align-items-center"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <FaBarsProgress className=" fs-1" />
-        </button>
 
-        <div
-          className="collapse navbar-collapse justify-content-center me-5"
-          id="navbarNavDropdown"
-        >
+        <div className="collapse navbar-collapse justify-content-center me-5">
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link
@@ -72,17 +54,6 @@ const Narbar = () => {
                 About
               </Link>
             </li>
-            {/*<li className="nav-item">*/}
-            {/*  <Link*/}
-            {/*      onClick={() => handleClick("resume")}*/}
-            {/*      className={`nav-link nav-link-hover ${*/}
-            {/*          activeLink === "resume" ? "text-decoration-underline" : ""*/}
-            {/*      }`}*/}
-            {/*      to="/resume"*/}
-            {/*  >*/}
-            {/*    Resume*/}
-            {/*  </Link>*/}
-            {/*</li>*/}
             <li className="nav-item">
               <Link
                   onClick={() => handleClick("project")}
@@ -121,7 +92,6 @@ const Narbar = () => {
           </li>
         </ul>
       </nav>
-      {/* mobilr nav */}
       <TopMobileNav />
       <MobileNav />
     </div>

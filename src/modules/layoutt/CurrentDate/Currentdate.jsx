@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 const Currentdate = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-
   useEffect(() => {
     // Update the current date every second
     const intervalId = setInterval(() => {
@@ -13,9 +12,7 @@ const Currentdate = () => {
     return () => clearInterval(intervalId);
   }, []);
   return (
-    <div className="fw-normal">
-      <p>{currentDate.toLocaleString()}</p>
-    </div>
+      <p className="">{currentDate.toLocaleString()}</p>
   );
 };
 

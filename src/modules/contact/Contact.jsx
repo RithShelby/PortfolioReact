@@ -1,89 +1,85 @@
-import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
-import { FaPhoneAlt } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
-import { FaLocationDot } from "react-icons/fa6";
+import React, { useRef } from "react";
+import {Button, Form} from "react-bootstrap";
+import {dataContact} from "../helper/dataSkill";
+import {Link} from "react-router-dom";
+import {FaFacebook, FaYoutube} from "react-icons/fa";
+import emailjs from "@emailjs/browser"
+import {ErrorAlert, Success} from "../widget/SweetAlert";
 const Contact = () => {
   const form = useRef();
-  const [message, setMessage] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
+
     emailjs
-      .sendForm(
-        "service_vpnsm6b",
-        "template_znsn4qh",
-        form.current,
-        "Ma6gvuUw5YUUoGB-n"
-      )
-      .then(
-        () => {
-          setMessage("Email sent successfully!");
+        .sendForm("service_olvgf9l", "template_jx7lr66", form.current, "DLzmkq9Fe6Ydadk_q")
+        .then((result) => {
+          Success("Email has sent!");
           form.current.reset();
-        },
-        (error) => {
-          setMessage(`Failed to send email: ${error.text}`);
-        }
-      );
+        })
+        .catch((err) => {
+          ErrorAlert("Email hasn't sent!");
+        });
   };
 
   return (
-    <div className="row my-5 mx-2">
+    <div className="row my-5 mx-2 pb-5">
       <div className="col-lg-6 col-md-6 col-sm-12">
-        <h3 className="fs-3 fw-bold">Get in Touch 🤩 </h3>
+        <h3 className="fs-3 fw-bold">Get in Touch</h3>
         <p className="text-secondary">
           You can write everything you want in the text area. But please put the
           real email in the input email box.
         </p>
-        <form ref={form} onSubmit={sendEmail}>
-          <input
-            type="text"
-            name="user_name"
-            placeholder="Your name"
-            className="form-control"
-            required
+        {dataContact.map((item) => (
+            <div key={item.id} className="d-flex align-items-center">
+              <i className="fs-3 text-secondary">{item.icon}</i>
+              <div className="d-flex flex-column lh-1 ms-4 align-items-start mt-3">
+                <p className="fw-bold ">{item.title}</p>
+                <p>{item.desc}</p>
+              </div>
+            </div>
+        ))}
+        <hr/>
+        <h5 className="fw-bold">Follow my Content Team:</h5>
+        <div className="d-flex">
+          <Link target="_blank" to="https://www.youtube.com/@3Cast-%E1%9E%9F%E1%9F%92%E1%9E%9A%E1%9F%92%E1%9E%8F%E1%9F%81%E1%9E%9F%E1%9E%83%E1%9E%B8">
+            <FaYoutube className="text-danger fs-3"/>
+          </Link>
+          <Link target="_blank" to="https://www.facebook.com/profile.php?id=61567683958745" className="ms-2">
+            <FaFacebook className="fs-3" />
+          </Link>
+        </div>
+      </div>
+      <div className="col-lg-6 col-md-6 col-sm-12 mt-4">
+        <Form ref={form} onSubmit={sendEmail} className="py-5 px-4 bg-light rounded-5 h-100" style={{boxShadow : "rgba(149, 157, 165, 0.2) 0px 8px 24px"}}>
+          <Form.Control
+              type="text"
+              name="name_form"
+              placeholder="Your name"
+              className="border-0 no-focus rounded-3"
+              required
           />
-
-          <input
-            type="email"
-            placeholder="Your Real Email ..."
-            name="user_email"
-            className="form-control my-4"
-            required
+          <Form.Control
+              type="email"
+              placeholder="Your Real Email ..."
+              name="email_form"
+              className="border-0 no-focus my-4 rounded-3"
+              required
           />
           <textarea
-            className="form-control"
-            placeholder="Your Message"
-            name="user_text"
-            required
+              className="border-0 no-focus w-100 rounded-3 mb-3 ps-3"
+              placeholder="Your Message"
+              name="message"
+              required
           />
-          <input
-            type="submit"
-            value="Submit"
-            className="btn btn-dark my-3 w-100"
-          />
-        </form>
+          <hr/>
+          <p className="text-secondary">
+            When you fill out the form , you will get the respond message from me
+            in your gmail box .
+          </p>
+          <Button type="submit" className="btn btn-dark rounded-5 py-3 float-end w-75">Submit</Button>
+        </Form>
       </div>
-      <div className="col-lg-6 col-md-6 col-sm-12 bg-dark rounded-3 mb-5 p-3">
-        <h3 className="fs-3 fw-bold text-light">Contact Information</h3>
-        <p className="text-light">
-          When you fill out the form , you will get the respond message from me
-          in your gmail box ✌️.
-        </p>
-        <div className="d-flex">
-          <FaPhoneAlt className="text-light fs-3" />
-          <p className="text-light">+885 17225628</p>
-        </div>
-        <div className="d-flex my-4">
-          <HiOutlineMail className="text-light fs-3" />
-          <p className="text-light">chhunnatharith@gmail.com</p>
-        </div>
-        <div className="d-flex">
-          <FaLocationDot className="text-light fs-3" />
-          <p className="text-light">St.10A/Phnom Penh,Cambodia</p>
-        </div>
-      </div>
-      {message && <p>{message}</p>}
     </div>
   );
 };
