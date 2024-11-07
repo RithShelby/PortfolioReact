@@ -33,7 +33,7 @@ const Project = () => {
                   <p className="fs-6">{item.desc}</p>
                   <hr />
                   <div className="d-flex justify-content-start align-items-center m-auto text-center">
-                    <Link to={item.demo} className="btn btn-light d-flex">
+                    <Link target="_blank" to={item.demo} className="btn btn-light d-flex">
                       <CgWebsite className="fs-5 m-auto me-2" />
                       Demo
                     </Link>
