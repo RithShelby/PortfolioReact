@@ -32,7 +32,7 @@ const HomePage = () => {
             let me introduce myself
           </h2>
           <p className="fs-5 lh-lg text-secondary">
-            I'm currently interning as a React.js Developer at Kilo IT,
+            I'm currently Intern's Front-end Developer at Kilo IT,
             specializing in front-end development. My focus is on utilizing
             Axios for API integration and Redux for state management. This
             internship is enhancing my skills in creating responsive user

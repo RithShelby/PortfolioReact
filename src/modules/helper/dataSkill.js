@@ -1,6 +1,12 @@
 import {SlLocationPin} from "react-icons/sl";
-import {MdOutlineMailOutline} from "react-icons/md";
+import {MdOutlineMailOutline, MdSpaceDashboard} from "react-icons/md";
 import {PiTelegramLogoLight} from "react-icons/pi";
+import {GrHomeRounded} from "react-icons/gr";
+import React from "react";
+import {LuFocus} from "react-icons/lu";
+import {IoMdPhotos} from "react-icons/io";
+import {FiUser} from "react-icons/fi";
+import {BsPersonRaisedHand} from "react-icons/bs";
 
 const dataSkill = [
   {
@@ -238,6 +244,38 @@ const dataContact = [
       },
 ]
 ;
+const mobileData = [
+  {
+    id : 1,
+    title : "Home",
+    path : "/",
+    icon :  <GrHomeRounded  />
+  },
+  {
+    id : 2,
+    path : "/about_me",
+    title : "About",
+    icon :  <BsPersonRaisedHand />
+  },
+  {
+    id : 3,
+    path : "/project",
+    title : "Project",
+    icon :   <MdSpaceDashboard />
+  },
+  {
+    id : 4,
+    path : "team-photo",
+    title : "Team Photo",
+    icon :   <IoMdPhotos  />
+  },
+  {
+    id : 5,
+    title : "Contact",
+    path : "/contact-me",
+    icon :    <FiUser />
+  },
+]
 // Now the titles are updated and more descriptive for user interaction
 
-export { dataSkill, dataProject, dataCourse, dataTeam , dataContact };
+export { dataSkill, dataProject, dataCourse, dataTeam , dataContact,mobileData };
