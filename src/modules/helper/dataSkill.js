@@ -7,6 +7,7 @@ import {LuFocus} from "react-icons/lu";
 import {IoMdPhotos} from "react-icons/io";
 import {FiUser} from "react-icons/fi";
 import {BsPersonRaisedHand} from "react-icons/bs";
+import {FaGithub} from "react-icons/fa";
 
 const dataSkill = [
   {
@@ -224,26 +225,33 @@ const dataTeam = [
   },
 ];
 const dataContact = [
-      {
-        id : 1,
-        title : "Address",
-        desc : "Phnom Penh City",
-        icon : <SlLocationPin />
-      },
-      {
-        id : 2,
-        title : "Email",
-        desc : "chhunnatharith@gmail.com",
-        icon : <MdOutlineMailOutline />
-      },
-      {
-        id : 3,
-        title : "Telegram",
-        desc : "017 225 628",
-        icon : <PiTelegramLogoLight />
-      },
-]
-;
+  {
+    id: 1,
+    title: "Address",
+    desc: "Phnom Penh City",
+    icon: <SlLocationPin />,
+  },
+  {
+    id: 2,
+    title: "Email",
+    desc: "chhunnatharith@gmail.com",
+    icon: <MdOutlineMailOutline />,
+  },
+  {
+    id: 3,
+    title: "Telegram",
+    desc: "017 225 628",
+    icon: <PiTelegramLogoLight />,
+    link: "https://t.me/ChhunNatharith", // Add actual Telegram link here
+  },
+  {
+    id: 4,
+    title: "Git Hub",
+    desc: "https://github.com/RithShelby",
+    icon: <FaGithub />,
+    link: "https://github.com/RithShelby", // Add actual GitHub link here
+  },
+];
 const mobileData = [
   {
     id : 1,

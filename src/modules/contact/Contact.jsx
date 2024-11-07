@@ -32,7 +32,9 @@ const Contact = () => {
         </p>
         {dataContact.map((item) => (
             <div key={item.id} className="d-flex align-items-center">
-              <i className="fs-3 text-secondary">{item.icon}</i>
+              <Link to={item.link} className="contact-hover">
+                <i className="fs-3 text-secondary">{item.icon}</i>
+              </Link>
               <div className="d-flex flex-column lh-1 ms-4 align-items-start mt-3">
                 <p className="fw-bold ">{item.title}</p>
                 <p>{item.desc}</p>

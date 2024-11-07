@@ -1,7 +1,6 @@
 import React from "react";
 
 import HomeImg from "../../assets/image/HomeImage.png";
-import Swiper from "../swiper/swiper";
 const HomePage = () => {
   return (
     <div className="row my-2 animate__animated  animate__zoomInDown">
