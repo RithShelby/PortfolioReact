@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { dataCourse } from "../helper/dataSkill";
+import CustomSearch from "../widget/CustomSearch";
+import CustomFlipCard from "../widget/CustomFlipCard";
 
 const RecCourse = () => {
   const [searchTerm, setSearch] = useState("");
@@ -17,7 +19,7 @@ const RecCourse = () => {
 
   return (
     <div className="row my-5">
-      <div className="d-flex flex-row align-items-center justify-content-start ">
+      <div className="d-flex flex-row align-items-center justify-content-start">
         <span
           style={{ width: "80px", height: "1px" }}
           className="border border-1 border-dark me-3"
@@ -27,22 +29,13 @@ const RecCourse = () => {
       <div className="row">
         {" "}
         <div className="d-flex justify-content-end">
-          <button className="btn btn-light d-flex align-items-center">
-            <CiSearch className="fs-1 text-dark" />
-            <input
-              type="search"
-              className="form-control border border-0 mx-3"
-              value={searchTerm}
-              onChange={handleSearch}
-              placeholder="Search Course"
-            />
-          </button>
+            <CustomSearch handleSearch={handleSearch} searchTerm={searchTerm}/>
         </div>
       </div>
       <div className="row my-4 m-auto px-2">
         {filterData.map((items) => {
           return (
-            <div className="col-md-6 my-3 " key={items.id}>
+            <div className="col-md-6 my-3" key={items.id}>
               <div data-aos="zoom-in-down"
                 className="card border border-0 overflow-hidden rounded-5 text-center"
                 style={{
@@ -51,31 +44,28 @@ const RecCourse = () => {
                 }}
               >
                 {" "}
-                <span
-                  style={{ width: "25%" }}
-                  class="badge text-bg-dark ms-4 mt-3 rounded-4 p-2 m-auto text-uppercase "
-                >
-                  {items.headtitle}
+                <span className="mt-2 ms-4">
+                    <p className="badge text-bg-dark rounded-4 text-uppercase p-2 float-start">{items.headtitle}</p>
                 </span>
-                <div className="card-body">
-                  <p className="fs-5 fw-bold">{items.title}</p>
-                  <div class="ratio ratio-16x9">
-                    <iframe
-                      className=""
-                      width="560"
-                      height="315"
-                      src={items.imgCourse}
-                      title="YouTube video"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+                              <div className="card-body">
+                                  <p className="fs-6 fw-bold">{items.title}</p>
+                                  <div className="ratio ratio-16x9">
+                                      <iframe
+                                          allowFullScreen={true}
+                                          className=""
+                                          width="560"
+                                          height="315"
+                                          src={items.imgCourse}
+                                          title="YouTube video"
+                                      ></iframe>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  );
+              })}
+          </div>
       </div>
-    </div>
   );
 };
 

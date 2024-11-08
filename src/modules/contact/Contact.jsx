@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import {Button, Form} from "react-bootstrap";
+import {Form} from "react-bootstrap";
 import {dataContact} from "../helper/dataSkill";
 import {Link} from "react-router-dom";
 import {FaFacebook, FaYoutube} from "react-icons/fa";
@@ -23,66 +23,71 @@ const Contact = () => {
   };
 
   return (
-    <div className="row my-5 mx-2 pb-5">
-      <div className="col-lg-6 col-md-6 col-sm-12">
+      <div className="row my-5 mx-2 pb-5 text-center">
         <h3 className="fs-3 fw-bold">Get in Touch</h3>
         <p className="text-secondary">
           You can write everything you want in the text area. But please put the
           real email in the input email box.
         </p>
-        {dataContact.map((item) => (
-            <div key={item.id} className="d-flex align-items-center">
-              <Link to={item.link} className="contact-hover">
-                <i className="fs-3 text-secondary">{item.icon}</i>
-              </Link>
-              <div className="d-flex flex-column lh-1 ms-4 align-items-start mt-3">
-                <p className="fw-bold ">{item.title}</p>
-                <p>{item.desc}</p>
+        <div className="col-lg-6 col-md-6 col-sm-12">
+          {dataContact.map((item) => (
+              <div key={item.id} className="d-flex align-items-center">
+                <Link to={item.link} className="contact-hover" target="_blank">
+                  <i className="fs-3 text-secondary">{item.icon}</i>
+                </Link>
+                <div className="d-flex flex-column lh-1 ms-4 align-items-start mt-3">
+                  <p className="fw-bold ">{item.title}</p>
+                  <p>{item.desc}</p>
+                </div>
               </div>
-            </div>
-        ))}
-        <hr/>
-        <h5 className="fw-bold">Follow my Content Team:</h5>
-        <div className="d-flex">
-          <Link target="_blank" to="https://www.youtube.com/@3Cast-%E1%9E%9F%E1%9F%92%E1%9E%9A%E1%9F%92%E1%9E%8F%E1%9F%81%E1%9E%9F%E1%9E%83%E1%9E%B8">
-            <FaYoutube className="text-danger fs-3"/>
-          </Link>
-          <Link target="_blank" to="https://www.facebook.com/profile.php?id=61567683958745" className="ms-2">
-            <FaFacebook className="fs-3" />
-          </Link>
+          ))}
+
+          <hr/>
+          <h5 className="fw-bold">Follow my Content Team:</h5>
+          <div className="d-flex">
+            <Link target="_blank"
+                  to="https://www.youtube.com/@3Cast-%E1%9E%9F%E1%9F%92%E1%9E%9A%E1%9F%92%E1%9E%8F%E1%9F%81%E1%9E%9F%E1%9E%83%E1%9E%B8">
+              <FaYoutube className="text-danger fs-3"/>
+            </Link>
+            <Link target="_blank" to="https://www.facebook.com/profile.php?id=61567683958745" className="ms-2">
+              <FaFacebook className="fs-3"/>
+            </Link>
+          </div>
+        </div>
+        <div className="col-lg-6 col-md-6 col-sm-12 mt-4 ">
+          <Form ref={form} onSubmit={sendEmail} className="py-5 px-4 bg-body-tertiary-s rounded-4" style={{
+            boxShadow: "rgba(149," +
+                " 157, 165, 0.2) 0px 8px 24px"
+          }}>
+            <Form.Control
+                type="text"
+                name="name_form"
+                placeholder="Your name ..."
+                className="border-0 no-focus rounded-3 border-bottom text-secondary"
+                required
+            />
+            <Form.Control
+                type="email"
+                placeholder="Your email ..."
+                name="email_form"
+                className="border-0 no-focus rounded-3 border-bottom my-4 text-secondary"
+                required
+            />
+
+            <textarea
+                className="form-control border-0 no-focus rounded-3 mb-3 ps-3 border-bottom text-secondary"
+                placeholder="Write me some message ..."
+                name="message"
+                required
+            />
+            <button className="pushable d-flex mt-4">
+              <span className="shadow"></span>
+              <span className="edge"></span>
+              <span className="front">Push Me</span>
+            </button>
+          </Form>
         </div>
       </div>
-      <div className="col-lg-6 col-md-6 col-sm-12 mt-4">
-        <Form ref={form} onSubmit={sendEmail} className="py-5 px-4 bg-light rounded-5 h-100" style={{boxShadow : "rgba(149, 157, 165, 0.2) 0px 8px 24px"}}>
-          <Form.Control
-              type="text"
-              name="name_form"
-              placeholder="Your name"
-              className="border-0 no-focus rounded-3"
-              required
-          />
-          <Form.Control
-              type="email"
-              placeholder="Your Real Email ..."
-              name="email_form"
-              className="border-0 no-focus my-4 rounded-3"
-              required
-          />
-          <textarea
-              className="border-0 no-focus w-100 rounded-3 mb-3 ps-3"
-              placeholder="Your Message"
-              name="message"
-              required
-          />
-          <hr/>
-          <p className="text-secondary">
-            When you fill out the form , you will get the respond message from me
-            in your gmail box .
-          </p>
-          <Button type="submit" className="btn btn-dark rounded-5 py-3 float-end w-75">Submit</Button>
-        </Form>
-      </div>
-    </div>
   );
 };
 

@@ -16,11 +16,11 @@ const About = () => {
           <img className="w-75 m-auto rounded-2" src={AboutImg} alt="" />
         </div>
         <div className="col-lg-6 col-md-12 col-sm-12 mt-5">
-          <h1 className="display-1 about_content animate__animated  animate__wobble">
+          <h1 className="display-1 about_content animate__bounceIn">
             I'm John Rith
           </h1>
           <h1 className="display-1 about_content">Web</h1>
-          <h1 className="display-1 about_content  animate__animated animate__swing">
+          <h1 className="display-1 about_content animate__bounceIn ">
             React JS
           </h1>
           <h5 className="about_content">Based in Phnom Penh , Cambodia</h5>
@@ -77,8 +77,7 @@ const About = () => {
               return (
                 <div  className="col-md-4 card_hover d-flex justify-content-center my-3">
                   {" "}
-                  <div
-                      data-aos="fade-up"
+                  <div data-aos="fade-up"
                     key={item.id}
                     className="card border border-0 rounded-4"
                     style={{

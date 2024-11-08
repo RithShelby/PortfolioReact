@@ -9,7 +9,7 @@ const TopMobileNav = () => {
         <Link to="/">
             <Image src={logo} alt="logo" style={{width : "11%"}} className="mt-1"/>
         </Link>
-        <div className="float-end mt-3">
+        <div className="float-end mt-3 me-3">
             <Currentdate/>
         </div>
     </div>
