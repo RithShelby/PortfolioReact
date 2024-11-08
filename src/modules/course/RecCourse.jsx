@@ -37,34 +37,31 @@ const RecCourse = () => {
           return (
             <div className="col-md-6 my-3" key={items.id}>
               <div data-aos="zoom-in-down"
-                className="card border border-0 overflow-hidden rounded-5 text-center"
+                className="card border border-0 overflow-hidden rounded-4 text-center"
                 style={{
                   height: "100%",
                   boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
                 }}
               >
-                {" "}
-                <span className="mt-2 ms-4">
-                    <p className="badge text-bg-dark rounded-4 text-uppercase p-2 float-start">{items.headtitle}</p>
-                </span>
-                              <div className="card-body">
-                                  <p className="fs-6 fw-bold">{items.title}</p>
-                                  <div className="ratio ratio-16x9">
-                                      <iframe
-                                          allowFullScreen={true}
-                                          className=""
-                                          width="560"
-                                          height="315"
-                                          src={items.imgCourse}
-                                          title="YouTube video"
-                                      ></iframe>
-                                  </div>
-                              </div>
-                          </div>
+                  <div className="mt-3">
+                      <div className="d-flex align-items-center justify-content-between px-3">
+                          <p className="badge text-bg-dark rounded-4 text-uppercase p-2 text-light ">{items.headtitle}</p>
+                          <p className="fs-6 text-secondary fw-bold">{items.title}</p>
                       </div>
-                  );
-              })}
-          </div>
+                      <div className="ratio ratio-16x9">
+                          <iframe
+                              allowFullScreen={true}
+                              width="560"
+                              height="315"
+                              src={items.imgCourse}
+                              title="YouTube video"/>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
       </div>
   );
 };

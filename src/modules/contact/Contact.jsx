@@ -83,7 +83,7 @@ const Contact = () => {
             <button className="pushable d-flex mt-4">
               <span className="shadow"></span>
               <span className="edge"></span>
-              <span className="front">Push Me</span>
+              <span className="front">Submit</span>
             </button>
           </Form>
         </div>
