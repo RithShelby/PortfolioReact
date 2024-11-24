@@ -13,13 +13,13 @@ const About = () => {
     <div className="col-lg-12">
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12 d-flex">
-          <img className="w-75 m-auto rounded-2" src={AboutImg} alt="" />
+          <img className="w-75 m-auto rounded-2 " src={AboutImg} alt="" />
         </div>
         <div className="col-lg-6 col-md-12 col-sm-12 mt-5">
           <h1 className="display-1 about_content animate__bounceIn">
-            I'm John Rith
+            I'm Rith
           </h1>
-          <h1 className="display-1 about_content">Web</h1>
+          <h1 className="display-1 about_content">Front-end</h1>
           <h1 className="display-1 about_content animate__bounceIn ">
             React JS
           </h1>

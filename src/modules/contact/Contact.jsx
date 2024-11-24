@@ -42,17 +42,17 @@ const Contact = () => {
               </div>
           ))}
 
-          <hr/>
-          <h5 className="fw-bold">Follow my Content Team:</h5>
-          <div className="d-flex">
-            <Link target="_blank"
-                  to="https://www.youtube.com/@3Cast-%E1%9E%9F%E1%9F%92%E1%9E%9A%E1%9F%92%E1%9E%8F%E1%9F%81%E1%9E%9F%E1%9E%83%E1%9E%B8">
-              <FaYoutube className="text-danger fs-3"/>
-            </Link>
-            <Link target="_blank" to="https://www.facebook.com/profile.php?id=61567683958745" className="ms-2">
-              <FaFacebook className="fs-3"/>
-            </Link>
-          </div>
+          {/*<hr/>*/}
+          {/*<h5 className="fw-bold">Follow my Content Team:</h5>*/}
+          {/*<div className="d-flex">*/}
+          {/*  <Link target="_blank"*/}
+          {/*        to="https://www.youtube.com/@3Cast-%E1%9E%9F%E1%9F%92%E1%9E%9A%E1%9F%92%E1%9E%8F%E1%9F%81%E1%9E%9F%E1%9E%83%E1%9E%B8">*/}
+          {/*    <FaYoutube className="text-danger fs-3"/>*/}
+          {/*  </Link>*/}
+          {/*  <Link target="_blank" to="https://www.facebook.com/profile.php?id=61567683958745" className="ms-2">*/}
+          {/*    <FaFacebook className="fs-3"/>*/}
+          {/*  </Link>*/}
+          {/*</div>*/}
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12 mt-4 ">
           <Form ref={form} onSubmit={sendEmail} className="py-5 px-4 bg-body-tertiary-s rounded-4" style={{
