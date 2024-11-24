@@ -23,7 +23,7 @@ const Contact = () => {
   };
 
   return (
-      <div className="row my-5 mx-2 pb-5 text-center">
+      <div className="row  mx-2 text-center">
         <h3 className="fs-3 fw-bold">Get in Touch</h3>
         <p className="text-secondary">
           You can write everything you want in the text area. But please put the
@@ -41,7 +41,6 @@ const Contact = () => {
                 </div>
               </div>
           ))}
-
           {/*<hr/>*/}
           {/*<h5 className="fw-bold">Follow my Content Team:</h5>*/}
           {/*<div className="d-flex">*/}

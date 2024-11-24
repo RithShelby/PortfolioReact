@@ -1,46 +1,27 @@
 import React from "react";
-
-import HomeImg from "../../assets/image/HomeImage.png";
+import HomeImg from "../../assets/image/HomeImage.png"
+import {Link} from "react-router-dom";
 const HomePage = () => {
   return (
-    <div className="row my-2 animate__animated  animate__zoomInDown">
-      <div className="col-lg-6">
-        <div className=" row">
+    <div className="row my-2 animate__animated  animate__zoomInDown px-2">
+      <div className="col-lg-6 my-5">
           <div className="text-dark">
-            <h1 className="display-4 text-dark text-center fw-bold  animate__bounce">
-              Who am I ?
+            <p className="fs-5">Hello Web from <span className="fw-bold">Scratch 👋</span></p>
+            <h1 className="display-1 about_content animate__bounceIn">
+              I'm Rith
             </h1>
-            <div className="roller text-center">
-              <span className="fs-4 fw-bold text-secondary" id="rolltext">
-                Experienced on React Js
-                <br />
-                Redux Management State
-                <br />
-                Contact me if you interested!
-                <br />
-                <span className="text-dark" id="spare-time">
-                  That's All
-                </span>
-              </span>
-              <br />
-            </div>
+            <p className="fs-5 lh-lg text-secondary">
+              I'm currently Junior Front-End Web Developer,
+              specializing in front-end development. My main focus is on making the website to be dynamic that user
+              enjoy. By the way , I currently improve myself on Integrate with API and use Redux for state management.
+            </p>
           </div>
-        </div>
-        <div className="text-center mt-5">
-          <h2 className="text-uppercase text-center text-decoration-underline mb-4 fw-bold">
-            let me introduce myself
-          </h2>
-          <p className="fs-5 lh-lg text-secondary">
-            I'm currently Intern's Front-end Developer at Kilo IT,
-            specializing in front-end development. My focus is on utilizing
-            Axios for API integration and Redux for state management. This
-            internship is enhancing my skills in creating responsive user
-            interfaces and dynamic web applications using modern JavaScript
-            frameworks.
-          </p>
-        </div>
+          <div className="d-flex">
+              <Link to="/contact-me" className="btn btn-dark me-3">Get in touch</Link>
+              <Link to="/project" className="btn btn-outline-dark">See my project</Link>
+          </div>
       </div>
-      <div className="col-lg-6 d-flex">
+      <div className="col-lg-6">
         <img src={HomeImg} className="w-100 m-auto" alt="" />
       </div>
     </div>

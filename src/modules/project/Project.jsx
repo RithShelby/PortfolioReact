@@ -5,7 +5,7 @@ import { CgWebsite } from "react-icons/cg";
 import { FaGithub } from "react-icons/fa";
 const Project = () => {
   return (
-    <div className="col-lg-12 text-center pb-5 mb-5">
+    <div className="col-lg-12 text-center">
       <div className="row">
         {" "}
         <h3 className="fw-bold">My Recent Projects</h3>

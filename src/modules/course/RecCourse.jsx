@@ -18,19 +18,10 @@ const RecCourse = () => {
   };
 
   return (
-    <div className="row my-5">
-      <div className="d-flex flex-row align-items-center justify-content-start">
-        <span
-          style={{ width: "80px", height: "1px" }}
-          className="border border-1 border-dark me-3"
-        ></span>
-        <p className=" fs-1 fw-bold">Recommendation Courses</p>
-      </div>
-      <div className="row">
-        {" "}
-        <div className="d-flex justify-content-end">
-            <CustomSearch handleSearch={handleSearch} searchTerm={searchTerm}/>
-        </div>
+    <div className="row">
+      <div className="d-flex flex-row align-items-center justify-content-between">
+        <p className=" fs-1 fw-bold">MyRecommend</p>
+          <CustomSearch handleSearch={handleSearch} searchTerm={searchTerm}/>
       </div>
       <div className="row my-4 m-auto px-2">
         {filterData.map((items) => {

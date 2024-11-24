@@ -8,6 +8,7 @@ import {IoMdPhotos} from "react-icons/io";
 import {FiUser} from "react-icons/fi";
 import {BsPersonRaisedHand} from "react-icons/bs";
 import {FaGithub} from "react-icons/fa";
+import {CiShare2} from "react-icons/ci";
 
 const dataSkill = [
   {
@@ -193,7 +194,7 @@ const dataCourse = [
 const dataTeam = [
   {
     id: 1,
-    image: require("../../assets/image/teamkilo1.JPG"),
+    image: require("../../assets/image/TeamSlide2.jpg"),
     title: "KiloIT Team Collaborating",
     desc: "That was my team practice on making basic website using html,css and js.",
     detail: "more",
@@ -207,14 +208,14 @@ const dataTeam = [
   },
   {
     id: 3,
-    image: require("../../assets/image/teamkilo3.jpg"),
+    image: require("../../assets/image/TeamSlide2.jpg"),
     title: "KiloIT Team Meeting",
     desc: "A KiloIT team meeting in progress, where members discuss and share ideas. The image captures the collaborative spirit and active engagement of the team in a structured yet open environment.",
     detail: "more",
   },
   {
     id: 4,
-    image: require("../../assets/image/team2.jpg"),
+    image: require("../../assets/image/TeamSlide2.jpg"),
     title: "KiloIT Team Meeting",
     desc: "A KiloIT team meeting in progress, where members discuss and share ideas. The image captures the collaborative spirit and active engagement of the team in a structured yet open environment.",
     detail: "more",
@@ -222,7 +223,7 @@ const dataTeam = [
 
   {
     id: 5,
-    image: require("../../assets/image/TeamSide1.jpg"),
+    image: require("../../assets/image/TeamSlide2.jpg"),
     title: "KiloIT Team Meeting",
     desc: "A KiloIT team meeting in progress, where members discuss and share ideas. The image captures the collaborative spirit and active engagement of the team in a structured yet open environment.",
     detail: "more",
@@ -230,7 +231,7 @@ const dataTeam = [
 
   {
     id: 6,
-    image: require("../../assets/image/team3.JPG"),
+    image: require("../../assets/image/TeamSlide2.jpg"),
     title: "KiloIT Team Meeting",
     desc: "A KiloIT team meeting in progress, where members discuss and share ideas. The image captures the collaborative spirit and active engagement of the team in a structured yet open environment.",
     detail: "more",
@@ -285,12 +286,18 @@ const mobileData = [
   },
   {
     id : 4,
+    title : "Blog",
+    path : "/blog",
+    icon :  <CiShare2 />
+  },
+  {
+    id : 5,
     path : "team-photo",
     title : "Team Photo",
     icon :   <IoMdPhotos  />
   },
   {
-    id : 5,
+    id : 6,
     title : "Contact",
     path : "/contact-me",
     icon :    <FiUser />
