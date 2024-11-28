@@ -2,9 +2,9 @@ import React from 'react';
 
 const SoonPage = () => {
     return (
-        <div className="text-center d-flex justify-content-center align-items-center flex-column">
+        <div className="text-center d-flex justify-content-center align-items-center m-auto flex-column">
             <p className="m-0 p-0 fs-5 fw-bold">Current Page is on Working ...</p>
-            <div className="main_wrapper ">
+            <div className="main_wrapper w-25">
                 <div className="main">
                     <div className="antenna">
                         <div className="antenna_shadow"></div>
