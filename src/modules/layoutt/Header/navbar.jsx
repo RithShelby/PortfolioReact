@@ -5,7 +5,7 @@ import { FaBarsProgress } from "react-icons/fa6";
 import MobileNav from "./mobileNav";
 import TopMobileNav from "./topMobileNav";
 const Narbar = () => {
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState(0);
 
   const handleClick = (link) => {
     setActiveLink(link);
