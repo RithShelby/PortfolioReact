@@ -145,11 +145,10 @@ const dataProject = [
   {
     id: 6,
     img: require("../../assets/image/MovieApp.png"),
-    title : "UpComingApp",
-    desc: "Movie Booking is coming soon",
+    title : "Movie Booing App",
+    desc: "Movie Booking is released.",
     date: "01/01/24",
-    demo: "",
-    github: "",
+    demo: "https://cinetime.vercel.app/",
   },
 ];
 const dataCourse = [
