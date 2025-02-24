@@ -118,6 +118,15 @@ const dataProject = [
   },
   {
     id: 3,
+    img: require("../../assets/image/blog (1).png"),
+    title : "Simple Blog Website",
+    desc: "HTML & Boostrap make it easy . ",
+    date: "01/01/24",
+    demo: "https://blogmeblog.vercel.app/",
+    github: "https://github.com/RithShelby/BlogWebsite",
+  },
+  {
+    id: 4,
     img: require("../../assets/image/3.png"),
     title : "Amado Ecommerce Shop Template",
     desc: "Amado Clone with Side bar , using react js with boostrap.",
@@ -126,7 +135,7 @@ const dataProject = [
     github: "https://github.com/RithShelby/amadoTemplate",
   },
   {
-    id: 4,
+    id: 5,
     img: require("../../assets/image/booking1.png"),
     title: "Admin Booking Movie",
     desc: "Admin Booking Movie Managements using ReactJs & Firebase",
@@ -135,7 +144,7 @@ const dataProject = [
     github: "https://github.com/RithShelby/MovieBooking",
   },
   {
-    id: 5,
+    id: 6,
     img: require("../../assets/image/5.png"),
     title: "Admin Ecommerce",
     desc: "Admin Ecommerce using React js with Redux managment state,integration axios api.",
@@ -143,12 +152,20 @@ const dataProject = [
     github: "https://github.com/RithShelby/AdminEcommerce",
   },
   {
-    id: 6,
+    id: 7,
     img: require("../../assets/image/MovieApp.png"),
     title : "Movie Booing App",
     desc: "Movie Booking is released.",
     date: "01/01/24",
     demo: "https://cinetime.vercel.app/",
+  },
+  {
+    id: 8,
+    img: require("../../assets/image/campus.png"),
+    title : "CampusConnect",
+    desc: "Community website for college students . ",
+    date: "01/01/24",
+    demo: "https://campusconnect-kh.vercel.app/",
   },
 ];
 const dataCourse = [
