@@ -59,7 +59,7 @@ const Narbar = () => {
                 About
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                   onClick={() => handleClick("blog")}
                   className={`nav-link nav-link-hover ${
@@ -69,7 +69,7 @@ const Narbar = () => {
               >
                 Blog
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link
                   onClick={() => handleClick("project")}
