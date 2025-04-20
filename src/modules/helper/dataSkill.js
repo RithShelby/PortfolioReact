@@ -300,20 +300,20 @@ const mobileData = [
     title : "Project",
     icon :   <MdSpaceDashboard />
   },
+  // {
+  //   id : 4,
+  //   title : "Blog",
+  //   path : "/blog",
+  //   icon :  <CiShare2 />
+  // },
   {
     id : 4,
-    title : "Blog",
-    path : "/blog",
-    icon :  <CiShare2 />
-  },
-  {
-    id : 5,
     path : "team-photo",
     title : "Team Photo",
     icon :   <IoMdPhotos  />
   },
   {
-    id : 6,
+    id : 5,
     title : "Contact",
     path : "/contact-me",
     icon :    <FiUser />
