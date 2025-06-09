@@ -41,10 +41,25 @@ const dataSkill = [
   },
   {
     id: 5,
+    name: "Tailwind css",
+    type: "SkillSet",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png",
+    detail: "Bootstrap is a front-end framework for creating responsive and mobile-first websites. It offers a collection of CSS and JavaScript components.",
+  },
+  {
+    id: 5,
     name: "React.js",
     type: "SkillSet",
     img: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png",
     detail: "React is a JavaScript library for building user interfaces. It allows developers to create reusable UI components and manage state effectively.",
+  },
+
+  {
+    id: 7,
+    name: "Next js",
+    type: "SkillSet",
+    img: "https://www.drupal.org/files/project-images/nextjs-icon-dark-background.png",
+    detail: "Redux is a state management library often used with React. It centralizes application state to make debugging and data handling simpler.",
   },
   {
     id: 6,
@@ -54,42 +69,42 @@ const dataSkill = [
     detail: "Redux is a state management library often used with React. It centralizes application state to make debugging and data handling simpler.",
   },
   {
-    id: 7,
+    id: 8,
     name: "VS Code",
     type: "Tools",
     img: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/visual-studio-code-icon.png",
     detail: "Visual Studio Code is a free code editor developed by Microsoft. It's highly extensible and supports many programming languages.",
   },
   {
-    id: 8,
+    id: 9,
     name: "GitLab & GitHub",
     type: "Tools",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png",
     detail: "GitLab and GitHub are platforms for version control and collaboration. They help developers track changes and work together on code.",
   },
   {
-    id: 9,
+    id: 10,
     name: "Trello",
     type: "Tools",
     img: "https://cdn-icons-png.flaticon.com/256/2111/2111656.png",
     detail: "Trello is a project management tool using boards, lists, and cards. It helps teams organize tasks and track project progress visually.",
   },
   {
-    id: 10,
+    id: 11,
     name: "Firebase",
     type: "Tools",
     img: "https://avatars.githubusercontent.com/u/1335026?s=200&v=4",
     detail: "Firebase is a platform by Google for building web and mobile applications. It offers backend services like authentication, database, and hosting.",
   },
   {
-    id: 11,
+    id: 12,
     name: "ClickUp",
     type: "Tools",
     img: "https://seeklogo.com/images/C/clickup-symbol-logo-BB24230BBB-seeklogo.com.png",
     detail: "ClickUp is a productivity tool for managing tasks, projects, and workflows. It provides features for time tracking, document management, and goal setting.",
   },
   {
-    id: 12,
+    id: 13,
     name: "IntelliJ IDEA",
     type: "Tools",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZHQE89O5n7JuJZLQE3MCBysxZx3Y-JMiSGQ&s",
@@ -306,12 +321,12 @@ const mobileData = [
   //   path : "/blog",
   //   icon :  <CiShare2 />
   // },
-  {
-    id : 4,
-    path : "team-photo",
-    title : "Team Photo",
-    icon :   <IoMdPhotos  />
-  },
+  // {
+  //   id : 4,
+  //   path : "team-photo",
+  //   title : "Team Photo",
+  //   icon :   <IoMdPhotos  />
+  // },
   {
     id : 5,
     title : "Contact",

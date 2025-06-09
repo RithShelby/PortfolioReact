@@ -1,9 +1,10 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Narbar from "./Header/navbar";
+import Footer from "./footer/footer";
 const Layout = () => {
   return (
-    <div className="container-fluid pb-5">
+    <div className="container-fluid">
       <div className="mb-5 pb-5">
         <Narbar />
       </div>

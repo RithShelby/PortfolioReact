@@ -2,8 +2,8 @@ import React from "react";
 import HomeImg from "../../assets/image/HomeImage.png"
 import {Link} from "react-router-dom";
 import SkillSet from "../about/SkillSet";
-import BlogPage from "../Blog/BlogPage";
 import Contact from "../contact/Contact";
+import Project from "../project/Project";
 const HomePage = () => {
   return (
     <div className="row my-2 animate__animated  animate__zoomInDown px-2">
@@ -27,9 +27,10 @@ const HomePage = () => {
       <div className="col-lg-6">
         <img src={HomeImg} className="w-100 m-auto" alt="" />
       </div>
+      <div className='my-5'>
       <SkillSet />
-      <BlogPage />
-      <Contact/>
+      </div>
+      <Project/>
     </div>
   );
 };

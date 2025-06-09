@@ -5,7 +5,7 @@ import { FaBarsProgress } from "react-icons/fa6";
 import MobileNav from "./mobileNav";
 import TopMobileNav from "./topMobileNav";
 const Narbar = () => {
-  const [activeLink, setActiveLink] = useState(0);
+  const [activeLink, setActiveLink] = useState('home');
 
   const handleClick = (link) => {
     setActiveLink(link);
@@ -81,7 +81,7 @@ const Narbar = () => {
                 My Project
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                   onClick={() => handleClick("team-photo")}
                   className={`nav-link nav-link-hover ${
@@ -91,7 +91,7 @@ const Narbar = () => {
               >
                 Team Photo
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         <ul className="navbar-nav">

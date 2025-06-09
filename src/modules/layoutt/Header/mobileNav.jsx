@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { mobileData } from "../../helper/dataSkill";
 
 const MobileNav = () => {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState('Home');
 
   const handleClick = (link) => {
     setActive(link);
@@ -11,7 +11,7 @@ const MobileNav = () => {
 
   return (
     <nav className="row fixed-bottom bg-dark text-secondary d-lg-none d-md-flex align-items-center pt-3 px-5">
-      <ul className="d-flex justify-content-between p-0">
+      <ul className="d-flex justify-content-around p-0">
         {mobileData.map((item) => (
           <Link
             key={item.id}
